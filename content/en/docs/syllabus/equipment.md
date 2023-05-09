@@ -36,7 +36,7 @@ During class, you can sit at one of the classroom's desktop computer workstation
 
 #### Outside class (Problem sets and exams)
 
-If you live on or near campus, you can use one of the library's computers to complete assignments outside of class during library hours. If you live too far from campus to come in to use the lab computers, the psychology department has a small number of laptops to borrow. Please contact me to get more info about checking out a laptop.
+If you live on or near Spelman's campus, you can use one of the computers in the [Science Center](https://www.spelman.edu/academics/library) or the [Cosby Academic Center](https://www.spelman.edu/academics/ssp/academic-support-services/comprehensive-writing-program/resources-for-students/computer-labs) to complete assignments outside of class during computer lab hours.
 
 ## Respectful computer use during class
 
