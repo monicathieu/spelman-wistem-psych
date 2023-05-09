@@ -1,0 +1,48 @@
+---
+title: "Intro"
+output: blogdown::html_page
+menu:
+  docs:
+    parent: "syllabus"
+weight: 100
+toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course description
+
+Our emotional responses are multifaceted and highly personal, but can still be broken down into organizing dimensions that help scientists to structure and make sense of people's emotional experiences. We can use statistical and graphing tools to break down large datasets of human emotion ratings and discover what psychological dimensions lie underneath them.
+
+In this project course, students will analyze open repositories of emotional stimuli and viewer ratings to learn about and replicate canonical results of affective science, including the decomposition of large numbers of emotion variables into two latent dimensions reflecting valence and arousal.
+
+This course aims to introduce students to _**scientific** computing_ through the lens of _psychology research,_ and _inspire excitement about the uses and joys of programming for scientists._
+
+## Learning objectives
+
+### Psychological concepts
+
+By the end of this course, students will be able to…
+
+- Describe the core claims of: 
+  - basic emotion theory
+  - appraisal theory
+  - the affective circumplex
+- Compare and contrast the predictions those theories might make for a given study
+
+### Technical skills
+
+By the end of this course, students will be able to…
+
+- Read in, clean, and inspect a dataset
+- Generate code to manipulate a dataset or produce a data visualization
+- Interpret and critique a data visualization
+- Identify and debug commonplace R errors
+
+There are _many_ different ways to analyze data, depending on the data and the research question. This course will focus on common exploratory statistical techniques, particularly _dimension reduction_ and _clustering techniques for multivariate data._
+
+## Course format
+
+This course will consist mainly of interactive code-along lectures, interspersed with solo and group work time on in-class activities and exercises.
