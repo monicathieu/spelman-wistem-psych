@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "16.16.0"
   NPM_VERSION = "8.11.0"
+  HUGO_VERSION = "0.101.0"
 
 [context.production]
   command = "npm run build"
@@ -40,3 +41,7 @@
   port = 8888
   publish = "public"
   autoLaunch = false
+
+
+
+

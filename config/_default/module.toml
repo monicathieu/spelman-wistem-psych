@@ -1,6 +1,6 @@
 [hugoVersion]
   extended = true
-  min = "0.80.0"
+  min = "0.101.0"
   max = ""
 
 [[mounts]]

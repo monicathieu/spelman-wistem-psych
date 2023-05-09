@@ -7,6 +7,7 @@ enableGitInfo = false
 enableRobotsTXT = true
 paginate = 7
 rssLimit = 10
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "(^|/)renv$", "renv\\.lock$"]
 
 # Multilingual
 defaultContentLanguage = "en"
@@ -81,3 +82,12 @@ rel  = "sitemap"
     [[related.indices]]
     name = "date"
     weight = 10
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
+

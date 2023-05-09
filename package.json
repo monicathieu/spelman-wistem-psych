@@ -15,11 +15,11 @@
   },
   "scripts": {
     "init": "shx rm -rf .git && git init -b main",
-    "create": "exec-bin node_modules/.bin/hugo/hugo new",
+    "create": "exec-bin node_modules/.bin/hugo/0.101.0/hugo new",
     "prestart": "npm run clean",
-    "start": "exec-bin node_modules/.bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender",
+    "start": "exec-bin node_modules/.bin/hugo/0.101.0/hugo server  --bind=0.0.0.0 --disableFastRender",
     "prebuild": "npm run clean",
-    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --minify",
+    "build": "exec-bin node_modules/.bin/hugo/0.101.0/hugo --gc --minify",
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json node_modules ",
@@ -28,11 +28,11 @@
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
     "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\"",
     "lint:markdown-fix": "markdownlint-cli2-fix \"*.md\" \"content/**/*.md\"",
-    "server": "exec-bin node_modules/.bin/hugo/hugo server",
+    "server": "exec-bin node_modules/.bin/hugo/0.101.0/hugo server",
     "test": "npm run -s lint",
     "env": "env",
     "precheck": "npm version",
-    "check": "exec-bin node_modules/.bin/hugo/hugo version",
+    "check": "exec-bin node_modules/.bin/hugo/0.101.0/hugo version",
     "copy:katex-fonts": "shx cp ./node_modules/katex/dist/fonts/* ./static/fonts/",
     "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination node_modules/.bin/hugo",
     "version": "auto-changelog -p && git add CHANGELOG.md"
@@ -52,7 +52,7 @@
     "exec-bin": "^1.0.0",
     "flexsearch": "^0.7.21",
     "highlight.js": "^11.5",
-    "hugo-installer": "^3.1",
+    "hugo-installer": "^3.1.0",
     "instant.page": "^5.1",
     "katex": "^0.16",
     "lazysizes": "^5.3",
@@ -67,5 +67,8 @@
   },
   "otherDependencies": {
     "hugo": "0.101.0"
+  },
+  "dependencies": {
+    "hugo": "^0.0.3"
   }
 }
