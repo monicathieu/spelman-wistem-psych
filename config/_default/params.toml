@@ -1,10 +1,10 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Doks"
+title = "Scientific Computing for Emotion Science"
 titleSeparator = "-"
-titleAddition = "Modern Documentation Theme"
-description = "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize."
+titleAddition = "Project Course for WiSTEM at Spelman College"
+description = "This is a course website for Monica Thieu's research module as part of the Spelman WiSTEM 2022 summer program."
 
 ## Documentation
 # docsVersion = "0.3"
