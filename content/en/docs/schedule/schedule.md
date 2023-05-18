@@ -52,6 +52,7 @@ The schedule is subject to change, but whatever you see here is current.
 
 - R scripts and R Markdown
 - Scripting hygiene
+- Version control with git
 
 ### Day 2
 
@@ -100,7 +101,7 @@ Clustering
 
 ### Day 1
 
-- Version control with git
+- Collaboration with GitHub
 - Peer reviewing code effectively and respectfully
 
 ### Day 2
