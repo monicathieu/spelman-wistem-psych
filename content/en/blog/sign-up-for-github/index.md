@@ -1,0 +1,41 @@
+---
+title: "Sign up for GitHub"
+output: blogdown::html_page
+description: "A quick guide to setting up your account for the course."
+excerpt: "A quick guide to setting up your account for the course."
+date: 2023-05-18
+lastmod: "2023-05-18"
+draft: false
+weight: 9
+images: ["leds_GitHub_logo_with_mark.png"]
+categories: ["Tutorials"]
+tags: ["setup"]
+contributors: ["Monica Thieu"]
+pinned: false
+homepage: false
+---
+
+
+
+## What is GitHub?
+
+GitHub is an incredibly powerful web platform for developers to save, share, and run code. [Some huge companies](https://github.com/customer-stories) manage their codebases on GitHub! On the _much_ smaller end, academics also use GitHub to manage research code for running experiments and analyzing data.
+
+GitHub does a _lot_ of things, most of which we probably won't get to in this class. But for our purposes, GitHub helps us with:
+
+- syncing code to the cloud
+- tracking changes
+- collaborating on code projects
+- publishing code for others to read and use
+
+## Make an account
+
+Go to the ["Join" page of GitHub](https://github.com/join) to create an account. It doesn't hugely matter which email address you associate your account with (and if necessary, you can change that email address later), so pick your preferred email. You may choose to use your .edu college email address, for the following benefits...
+
+## Join GitHub for Education
+
+Once you've made your account, go to the [GitHub for Education page](https://education.github.com) to redeem some sweet student-specific benefits.
+
+The main thing to do is to follow [these instructions](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student) to join GitHub Global Campus. This is a new section of GitHub that offers special benefits for students, and integrates features when your instructors use GitHub Classroom to manage code-based homework assignments. The application and approval process should be pretty quick, but **requires you to upload a picture of your student ID, or some other proof of enrollment.**
+
+We won't be using GitHub Global Campus features right off the bat, but you may find some of them useful in the future! For example, you can get pretty hefty student discounts on a lot of programming resources through the [Student Developer Pack.](https://education.github.com/pack) You might find these useful in your other classes and projects 😊
