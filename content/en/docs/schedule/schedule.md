@@ -8,6 +8,13 @@ weight: 200
 toc: true
 ---
 
+We will always meet at 2:30-4:30 pm. The weekly schedule will *generally* be:
+
+- Monday: Class
+- Tuesday: *No meeting*
+- Wednesday: Office hours and co-working
+- Thursday: Class
+
 {{< alert icon="‼️" >}}
 The schedule is subject to change, but whatever you see here is current.
 {{< /alert >}}
@@ -16,13 +23,13 @@ The schedule is subject to change, but whatever you see here is current.
 
 **Introduction to scientific computing**
 
-### Day 1
+### Monday
 
 - Why scientists program
 - The anatomy of code and code editors
-- What emotions are and how we study them
+- How and why psychologists use computational tools
 
-### Day 2
+### Thursday
 
 - Data types
 - Logical and relational operators
@@ -31,30 +38,34 @@ The schedule is subject to change, but whatever you see here is current.
 
 ## Week 2
 
+{{< alert icon="️📅" >}}
+We will have a full class on Monday, _Wednesday,_ and Thursday this week, to make up for no class the Monday after.
+{{< /alert >}}
+
 **Data wrangling: The core toolkit**
 
-### Day 1
+### Monday
 
 - The structure of psychology research data
 - Cleaning data
 
-### Day 2
+### Wednesday
 
 - Reshaping data
 - Joining data
 - Dealing with irregular data
 
-## Week 3
+### Thursday
 
 **Code style and hygiene**
-
-### Day 1
 
 - R scripts and R Markdown
 - Scripting hygiene
 - Version control with git
 
-### Day 2
+## Week 3
+
+### Thursday
 
 **Working with scientists’ data**
 
@@ -66,12 +77,12 @@ The schedule is subject to change, but whatever you see here is current.
 
 **Graphing and visual communication**
 
-### Day 1
+### Monday
 
 - The grammar of graphics
 - Graphs as communication devices
 
-### Day 2
+### Thursday
 
 - Graph customization
 - Visual communication best practices
@@ -80,7 +91,7 @@ The schedule is subject to change, but whatever you see here is current.
 
 **Complex descriptive statistics and visualizations**
 
-### Day 1
+### Monday
 
 Dimension reduction and mapping
 
@@ -88,7 +99,7 @@ Dimension reduction and mapping
 - Multidimensional scaling
 - t-SNE
 
-### Day 2
+### Thursday
 
 Clustering
 
@@ -97,14 +108,13 @@ Clustering
 
 ## Week 6
 
-**Collaborating on code and science**
+**Presenting and sharing code and results**
 
-### Day 1
-
-- Collaboration with GitHub
-- Peer reviewing code effectively and respectfully
-
-### Day 2
+### Monday
 
 - Preparing and documenting code and data for sharing
 - Formatting and publishing analysis write-ups
+
+### Thursday
+
+- Presenting data analysis projects

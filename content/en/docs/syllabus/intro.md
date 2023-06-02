@@ -12,29 +12,18 @@ toc: true
 
 ## Course description
 
-Our emotional responses are multifaceted and highly personal, but can still be broken down into organizing dimensions that help scientists to structure and make sense of people's emotional experiences. We can use statistical and graphing tools to break down large datasets of human emotion ratings and discover what psychological dimensions lie underneath them.
+Our thoughts, feelings, and behaviors are multifaceted and highly personal, but can still be broken down into organizing dimensions that help scientists to structure and make sense of underlying psychological constructs. We can use statistical and graphing tools to break down large datasets of human ratings & responses and discover what psychological dimensions lie underneath them.
 
-In this project course, students will analyze open repositories of emotional stimuli and viewer ratings to learn about and replicate canonical results of affective science, including the decomposition of large numbers of emotion variables into two latent dimensions reflecting valence and arousal.
+In this project course, students will analyze open repositories of psychological stimuli and observer ratings to learn about and replicate canonical results of psychological science. Specifically, students will practice decomposing large numbers of psychological variables into latent dimensions like valence and arousal (underlying emotion) or warmth and competence (underlying social trait inference).
 
 This course aims to introduce students to _**scientific** computing_ through the lens of _psychology research,_ and _inspire excitement about the uses and joys of programming for scientists._
 
 ## Learning objectives
 
-### Psychological concepts
-
-By the end of this course, students will be able to…
-
-- Describe the core claims of: 
-  - basic emotion theory
-  - appraisal theory
-  - the affective circumplex
-- Compare and contrast the predictions those theories might make for a given study
-
-### Technical skills
-
 By the end of this course, students will be able to…
 
 - Read in, clean, and inspect a dataset
+- Investigate and describe the scientific concepts necessary to make sense of the dataset
 - Generate code to manipulate a dataset or produce a data visualization
 - Interpret and critique a data visualization
 - Identify and debug commonplace R errors

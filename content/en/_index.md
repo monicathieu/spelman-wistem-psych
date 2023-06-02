@@ -1,7 +1,7 @@
 ---
-title : "Spelman WiSTEM Research Module syllabus"
-description: "This is a course website for my research module as part of the Spelman WiSTEM 2022 summer program."
-lead: "This is a course website for my research module as part of the Spelman WiSTEM 2022 summer program."
+title : "Spelman WiSTEM Computational Research Module"
+description: "Welcome to the course website for the computational research module of the Spelman WiSTEM 2023 summer program."
+lead: "Welcome to the course website for the computational research module of the Spelman WiSTEM 2023 summer program."
 output: blogdown::html_page
 draft: false
 images: []
