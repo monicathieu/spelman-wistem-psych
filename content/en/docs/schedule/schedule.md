@@ -39,7 +39,7 @@ The schedule is subject to change, but whatever you see here is current.
 ## Week 2
 
 {{< alert icon="️📅" >}}
-We will have a full class on Monday, _Wednesday,_ and Thursday this week, to make up for no class the Monday after.
+We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We will not have class this Monday (Juneteenth).
 {{< /alert >}}
 
 **Data wrangling: The core toolkit**
@@ -64,6 +64,10 @@ We will have a full class on Monday, _Wednesday,_ and Thursday this week, to mak
 - Version control with git
 
 ## Week 3
+
+{{< alert icon="️📅" >}}
+We will not have class this Monday or office hours this Wednesday (Dr. Thieu is at a conference).
+{{< /alert >}}
 
 ### Thursday
 

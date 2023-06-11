@@ -47,7 +47,7 @@ blogdown::shortcode_html(.name = "alert",
 ```{r}
 blogdown::shortcode_html(.name = "alert",
                          icon = "️📅",
-                         .content = "We will have a full class on Monday, _Wednesday,_ and Thursday this week, to make up for no class the Monday after.")
+                         .content = "We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We will not have class this Monday (Juneteenth).")
 ```
 
 **Data wrangling: The core toolkit**
@@ -72,6 +72,12 @@ blogdown::shortcode_html(.name = "alert",
 - Version control with git
 
 ## Week 3
+
+```{r}
+blogdown::shortcode_html(.name = "alert",
+                         icon = "️📅",
+                         .content = "We will not have class this Monday or office hours this Wednesday (Dr. Thieu is at a conference).")
+```
 
 ### Thursday
 
