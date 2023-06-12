@@ -52,7 +52,7 @@ blogdown::shortcode_html(.name = "alert",
 
 **Data wrangling: The core toolkit**
 
-### Monday
+### _Tuesday_
 
 - The structure of psychology research data
 - Cleaning data

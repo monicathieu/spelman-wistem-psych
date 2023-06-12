@@ -44,7 +44,7 @@ We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We 
 
 **Data wrangling: The core toolkit**
 
-### Monday
+### *Tuesday*
 
 - The structure of psychology research data
 - Cleaning data
