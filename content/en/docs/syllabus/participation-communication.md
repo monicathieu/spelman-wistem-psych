@@ -4,7 +4,7 @@ output: blogdown::html_page
 menu:
   docs:
     parent: "syllabus"
-weight: 150
+weight: 160
 toc: true
 ---
 
