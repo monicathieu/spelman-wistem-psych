@@ -20,6 +20,32 @@ In our first class, we started off with **orienting to the RStudio interface,** 
 
 ### Orienting to RStudio
 
+#### Console window
+
+In the automatic configuration of RStudio’s panes/mini-windows, the console is likely in the bottom left. In general, you can type R commands in the console, and press Enter to execute those commands. This is where you can execute R code!
+
+Note: the console is a great place to try out new stuff, but it doesn’t save your code as one piece the way a script does – for the most part it is good practice to be writing scripts.
+
+#### Editor window
+
+In everyday RStudio life, though, you’ll likely spend most of your time in the editor window (default position should be upper left pane). This is where you edit R script files. R scripts are files that contain R code typed out that you can write once, and then run as many times as you want. You’ll do the vast majority of your code writing in script files, so that you can have records of the data processing and analyses you’ve written.
+
+#### Environment/history window
+
+In this window (default position: upper right pane), you can see some useful stuff pertaining to your current R session:
+
+Environment: this is where you can see all of the data you currently have loaded in your R session, or any other variables you’ve created.
+History: this is where you can see your command history of all the R commands you’ve run in this session. Use it wisely!
+
+#### Files/pkgs/help window
+
+In this window (default position: lower right pane), you can see even more useful stuff:
+
+- **Files:** This is a rudimentary file browser, in case you want to use this to click through your folders and open R scripts.
+- **Plots:** If you render a graph, it appears in this tab.
+- **Packages:** This is a list of all the packages you have installed. You can install new packages/update existing ones using the buttons you see on the top of the tab. Any packages that are currently loaded in your R session will have the check box checked.
+- **Help:** You can search for and read documentation of any R function here. I spend a lot of time here!
+
 ### Reading data into R
 
 In order to read in data into R’s memory and actually analyze it, you need to know two pieces of information about your current R project:
@@ -96,7 +122,7 @@ big5_raw
     ## #   C2 <dbl>, C3 <dbl>, C4 <dbl>, C5 <dbl>, C6 <dbl>, C7 <dbl>, C8 <dbl>,
     ## #   C9 <dbl>, C10 <dbl>, O1 <dbl>, O2 <dbl>, O3 <dbl>, O4 <dbl>, O5 <dbl>, …
 
-When we read a table of data into R, the resulting object is called a **dataframe.** Our dataframe hhas 19719 observations, with each row coming from a different participant (I think/hope!), and 57 columns of data for each participant.
+When we read a table of data into R, the resulting object is called a **dataframe.** Our dataframe has 19719 observations, with each row coming from a different participant (I think/hope!), and 57 columns of data for each participant.
 
 ### Recoding categorical columns
 
