@@ -37,6 +37,7 @@ Note: the console is a great place to try out new stuff, but it doesn’t save y
 In everyday RStudio life, though, you’ll likely spend most of your time in the editor window (default position should be upper left pane). This is where you edit R script files. R scripts are files that contain R code typed out that you can write once, and then run as many times as you want. You’ll do the vast majority of your code writing in script files, so that you can have records of the data processing and analyses you’ve written.
 
 #### Environment/history window
+
 In this window (default position: upper right pane), you can see some useful stuff pertaining to your current R session:
 
 Environment: this is where you can see all of the data you currently have loaded in your R session, or any other variables you’ve created.
