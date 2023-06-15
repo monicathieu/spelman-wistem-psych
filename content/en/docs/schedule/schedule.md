@@ -66,8 +66,12 @@ We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We 
 ## Week 3
 
 {{< alert icon="️📅" >}}
-We will not have class this Monday or office hours this Wednesday (Dr. Thieu is at a conference).
+We will have a slightly altered schedule this week (Dr. Thieu is at a conference).
 {{< /alert >}}
+
+### *Tuesday*
+
+- One-on-one check-in meetings (Zoom)
 
 ### Thursday
 

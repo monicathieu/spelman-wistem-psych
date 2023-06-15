@@ -76,8 +76,12 @@ blogdown::shortcode_html(.name = "alert",
 ```{r}
 blogdown::shortcode_html(.name = "alert",
                          icon = "️📅",
-                         .content = "We will not have class this Monday or office hours this Wednesday (Dr. Thieu is at a conference).")
+                         .content = "We will have a slightly altered schedule this week (Dr. Thieu is at a conference).")
 ```
+
+### _Tuesday_
+
+- One-on-one check-in meetings (Zoom)
 
 ### Thursday
 
