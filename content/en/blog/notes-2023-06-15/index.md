@@ -18,7 +18,7 @@ homepage: false
 
 This isn’t the exact *order* that we practiced these concepts in class, but I’ve reordered these into an order that reads/flows more sensibly after the fact.
 
-You can read more about these in [Chapter 4 of R for Data Science](https://r4ds.hadley.nz/data-transform.html). For more technical, in-depth information about dataframe manipulation tools, check out the package docs for [dplyr,](https://dplyr.tidyverse.org), the package these functions come from.
+You can read more about these in [Chapter 4 of R for Data Science](https://r4ds.hadley.nz/data-transform.html). For more technical, in-depth information about dataframe manipulation tools, check out the package docs for [dplyr,](https://dplyr.tidyverse.org) the package these functions come from.
 
 First, we need to read in the data used for the demonstrations below.
 
