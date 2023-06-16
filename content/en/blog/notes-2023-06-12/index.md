@@ -4,7 +4,7 @@ output: blogdown::html_page
 description: "Lecture notes and helpful info after class."
 excerpt: "Lecture notes and helpful info after class."
 date: 2023-06-12
-lastmod: "2023-06-15"
+lastmod: "2023-06-16"
 draft: false
 images: []
 categories: ["Class notes"]
