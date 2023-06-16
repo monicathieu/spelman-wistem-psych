@@ -6,7 +6,6 @@ excerpt: "A quick guide to setting up your cloud computing account for the cours
 date: 2023-05-18
 lastmod: "`r Sys.Date()`"
 draft: false
-weight: 10
 images: ["rstudio_cloud_banner.png"]
 categories: ["Tutorials"]
 tags: ["setup"]

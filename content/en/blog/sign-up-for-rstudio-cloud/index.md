@@ -4,9 +4,8 @@ output: blogdown::html_page
 description: "A quick guide to setting up your cloud computing account for the course."
 excerpt: "A quick guide to setting up your cloud computing account for the course."
 date: 2023-05-18
-lastmod: "2023-05-18"
+lastmod: "2023-06-16"
 draft: false
-weight: 10
 images: ["rstudio_cloud_banner.png"]
 categories: ["Tutorials"]
 tags: ["setup"]

@@ -4,9 +4,8 @@ output: blogdown::html_page
 description: "A quick guide to setting up your account for the course."
 excerpt: "A quick guide to setting up your account for the course."
 date: 2023-05-18
-lastmod: "2023-05-18"
+lastmod: "2023-06-16"
 draft: false
-weight: 9
 images: ["leds_GitHub_logo_with_mark.png"]
 categories: ["Tutorials"]
 tags: ["setup"]

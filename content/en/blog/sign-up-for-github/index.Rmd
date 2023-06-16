@@ -6,7 +6,6 @@ excerpt: "A quick guide to setting up your account for the course."
 date: 2023-05-18
 lastmod: "`r Sys.Date()`"
 draft: false
-weight: 9
 images: ["leds_GitHub_logo_with_mark.png"]
 categories: ["Tutorials"]
 tags: ["setup"]
