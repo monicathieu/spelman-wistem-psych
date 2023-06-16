@@ -45,14 +45,18 @@ The pipe does one simple, but key, thing: **takes the object on the left-hand si
 
 Generally, a block of code like:
 
-    df_new <- df_old |> 
-      foo() |> 
-      bar(arg = TRUE) |> 
-      baz()
+``` r
+df_new <- df_old |> 
+  foo() |> 
+  bar(arg = TRUE) |> 
+  baz()
+```
 
 is equivalent to:
 
-    df_new <- baz(bar(foo(df_old), arg = TRUE))
+``` r
+df_new <- baz(bar(foo(df_old), arg = TRUE))
+```
 
 Now, you can chain a series of commands to operate on a dataframe all at once, and easily read those commands from left-to-right and top-to-bottom, in the same order that R executes them.
 

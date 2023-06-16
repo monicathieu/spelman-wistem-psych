@@ -42,7 +42,7 @@ The pipe does one simple, but key, thing: **takes the object on the left-hand si
 
 Generally, a block of code like:
 
-```
+```r
 df_new <- df_old |> 
   foo() |> 
   bar(arg = TRUE) |> 
@@ -51,7 +51,7 @@ df_new <- df_old |>
 
 is equivalent to:
 
-```
+```r
 df_new <- baz(bar(foo(df_old), arg = TRUE))
 ```
 
