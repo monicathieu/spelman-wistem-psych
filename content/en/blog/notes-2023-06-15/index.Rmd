@@ -14,12 +14,6 @@ pinned: false
 homepage: false
 ---
 
-TESTING!
-
-```{=html}
-<link rel="stylesheet" href="highlight.js/styles/base16/unikitty-light.css">
-```
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 

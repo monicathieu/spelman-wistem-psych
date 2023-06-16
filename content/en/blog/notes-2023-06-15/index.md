@@ -14,10 +14,6 @@ pinned: false
 homepage: false
 ---
 
-TESTING!
-
-<link rel="stylesheet" href="highlight.js/styles/base16/unikitty-light.css">
-
 ## Lecture notes
 
 This isn’t the exact *order* that we practiced these concepts in class, but I’ve reordered these into an order that reads/flows more sensibly after the fact.
