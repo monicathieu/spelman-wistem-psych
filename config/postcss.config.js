@@ -29,7 +29,9 @@ module.exports = {
           './node_modules/@hyas/doks/assets/scss/components/_alerts.scss',
           './node_modules/@hyas/doks/assets/scss/components/_buttons.scss',
           './node_modules/@hyas/doks/assets/scss/components/_code.scss',
-          './node_modules/@hyas/doks/assets/scss/components/_syntax.scss',
+          // whitelist the css for my highlight.js theme so it doesn't get purged on build
+          //'./node_modules/@hyas/doks/assets/scss/components/_syntax.scss',
+          './node_modules/highlight.js/scss/base16/unikitty-light.scss',
           './node_modules/@hyas/doks/assets/scss/components/_search.scss',
           './node_modules/@hyas/doks/assets/scss/common/_dark.scss',
           './node_modules/katex/dist/katex.css',
