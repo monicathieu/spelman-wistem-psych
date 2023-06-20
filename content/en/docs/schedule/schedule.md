@@ -21,15 +21,17 @@ The schedule is subject to change, but whatever you see here is current.
 
 ## Week 1
 
-**Introduction to scientific computing**
-
 ### Monday
+
+**Introduction to scientific computing**
 
 - Why scientists program
 - The anatomy of code and code editors
 - How and why psychologists use computational tools
 
 ### Thursday
+
+**Data wrangling: The core toolkit**
 
 - Data types
 - Logical and relational operators
@@ -42,18 +44,19 @@ The schedule is subject to change, but whatever you see here is current.
 We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We will not have class this Monday (Juneteenth).
 {{< /alert >}}
 
-**Data wrangling: The core toolkit**
-
 ### *Tuesday*
 
+**Data wrangling: The core toolkit (continued)**
+
 - The structure of psychology research data
-- Cleaning data
+- Reshaping data
+- Joining data
 
 ### Wednesday
 
-- Reshaping data
-- Joining data
+- Exploring data visually
 - Dealing with irregular data
+- Developing strategies for cleaning data
 
 ### Thursday
 
@@ -61,7 +64,6 @@ We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We 
 
 - R scripts and R Markdown
 - Scripting hygiene
-- Version control with git
 
 ## Week 3
 
