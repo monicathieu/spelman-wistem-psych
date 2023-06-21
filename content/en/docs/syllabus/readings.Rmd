@@ -20,4 +20,16 @@ Class sessions, and the examples worked in class and on problem sets, will not s
 
 ## Additional references
 
-As we use them, this section will be updated with links to useful web pages for help with certain packages, techniques, etc.
+```{r}
+blogdown::shortcode_html(.name = "alert",
+                         icon = "‼️",
+                         .content = "As we go through the class, this section will be updated with links to useful readings and resources.")
+```
+
+### Package documentation & use guides
+
+- [tidyverse](https://www.tidyverse.org/packages/)
+
+### Theory papers
+
+[_Tidy data_](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham, Journal of Statistical Software
