@@ -1,0 +1,66 @@
+---
+title: 'Class notes: June 29, 2023'
+output: blogdown::html_page
+description: "Lecture notes and helpful info after class."
+excerpt: "Lecture notes and helpful info after class."
+date: 2023-06-29
+lastmod: "2023-06-30"
+draft: false
+images: []
+categories: ["Class notes"]
+tags: []
+contributors: ["Monica Thieu"]
+pinned: false
+homepage: false
+---
+
+In today's class, we _searched for high-quality datasets_ to use in final projects.
+
+## Evaluating data
+
+What makes a dataset high-quality? For a detailed checklist of quality assurance questions to ask about a dataset, I like the [Carleton College library checklist](https://gouldguides.carleton.edu/c.php?g=146834&p=964943). I've summarized the 5 categories of questions to check here.
+
+- **Source:** Who collected the data? Can you trace the data to its original source?
+- **Authority:** Is the person/organization who collected the data a trained and impartial expert in the area that they collected the data?
+- **Purpose:** What was the goal of data collection? What biases might those goals introduce into the data?
+- **Currency:** How recent are the data? Are they the most recent available? Did any major world events happen between data collection and the present that would affect your interpretation of the data?
+- **Collection methods:** How were the data collected? How granular are the records (like per person, per event, per county, per country)? What biases might the data collection methods introduce into the data?
+
+## Potential sources of data
+
+This list is _not exhaustive!_ However, it can be a good place to start. This section of the lecture notes may be updated as we find more data sources we want to log for later use.
+
+Some of these data sources belong directly to the agencies that collect the data, so any data you download from them is _primary._ Where marked, though, other data sources are _secondary repositories_ that link out to other people's datasets. You may need to chase those datasets down to their source to be able to evaluate their quality.
+
+When Googling for other data sources, include 'public data' or 'open data' in your search terms to limit results to agencies/groups that will actually let you download tables of data, as opposed to summary reports and charts.
+
+### Non-geographically specific data
+
+- 'Data-science-y' data: [Kaggle](https://www.kaggle.com/datasets), data can be uploaded by any user so double-check its quality
+
+### State of Georgia
+
+State agencies:
+
+- Health data: [GA Dept of Public Health OASIS](https://oasis.state.ga.us), must click through individual variables and download the data for each variable separately
+
+### United States
+
+Federal agencies:
+
+- Health data:
+  - [CDC WONDER](https://wonder.cdc.gov)
+  - [HealthData.gov](https://healthdata.gov), secondary data repository
+- Environmental data: [EPA Environmental Dataset Gateway](https://edg.epa.gov/metadata/catalog/main/home.page)
+- General social science data: [US Census Bureau Survey Explorer](https://www.census.gov/data/data-tools/survey-explorer/), must go to specific survey page to download its data
+- Crime data: [FBI Crime Data Explorer](https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/downloads), download tabular data from the Documents and Downloads section
+
+Research institutes:
+- Economic data: [National Bureau of Economic Research Public Use Data Archive](https://www.nber.org/research/data), secondary data repository
+- General social science data: [Inter-university Consortium for Political and Social Research](https://www.icpsr.umich.edu/web/pages/ICPSR/index.html), secondary data repository
+
+### Worldwide
+
+- Health data: [World Health Organization Global Health Observatory](https://www.who.int/data/gho/data/indicators/indicators-index), must click through individual variables ('indicators') and download the data for each variable separately
+- General social science data, focus on children: [UNICEF Data](https://data.unicef.org/resources/resource-type/datasets/)
+- Financial data: [International Monetary Fund Data Portal](https://data.imf.org/?sk=388dfa60-1d26-4ade-b505-a05a558d9a42&sid=1479329132316)
