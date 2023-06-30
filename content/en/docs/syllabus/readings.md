@@ -29,6 +29,7 @@ As we go through the class, this section will be updated with links to useful re
 ### Package documentation & use guides
 
 - [tidyverse](https://www.tidyverse.org/packages/)
+- [R Graphics Cookbook](https://r-graphics.org) by Winston Chang, which uses ggplot2 (which we use)
 
 ### Theory papers
 
