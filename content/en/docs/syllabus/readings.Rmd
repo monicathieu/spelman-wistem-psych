@@ -28,8 +28,10 @@ blogdown::shortcode_html(.name = "alert",
 
 ### Package documentation & use guides
 
-- [tidyverse](https://www.tidyverse.org/packages/)
+- [Tidyverse online package documentation](https://www.tidyverse.org/packages/): much more detailed and comprehensive
+- [Tidyverse cheatsheets](https://rstudio.github.io/cheatsheets/): quicker one-stop-shop help, but less detailed
 - [R Graphics Cookbook](https://r-graphics.org) by Winston Chang, which uses ggplot2 (which we use)
+
 
 ### Theory papers
 
