@@ -48,9 +48,7 @@ We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We 
 
 **Data wrangling: The core toolkit (continued)**
 
-- The structure of psychology research data
-- Reshaping data
-- Joining data
+- Tidy dataframe manipulation
 
 ### Wednesday
 
@@ -85,36 +83,33 @@ We will have a slightly altered schedule this week (Dr. Thieu is at a conference
 
 ## Week 4
 
+**Data cleaning: the real stuff**
+
+### Monday
+
+- Reading in data
+- Cleaning column formats
+- Handling missing data
+
+### Thursday
+
+- Reshaping data
+- Joining data
+
+## Week 5
+
 **Graphing and visual communication**
 
 ### Monday
 
-- The grammar of graphics
-- Graphs as communication devices
+- Graphs as data analysis tools
+- Exploratory data analysis
 
 ### Thursday
 
+- Graphs as communication devices
 - Graph customization
 - Visual communication best practices
-
-## Week 5
-
-**Complex descriptive statistics and visualizations**
-
-### Monday
-
-Dimension reduction and mapping
-
-- Principal components analysis
-- Multidimensional scaling
-- t-SNE
-
-### Thursday
-
-Clustering
-
-- Hierarchical clustering
-- K-means clustering
 
 ## Week 6
 
@@ -122,9 +117,12 @@ Clustering
 
 ### Monday
 
-- Preparing and documenting code and data for sharing
 - Formatting and publishing analysis write-ups
 
 ### Thursday
 
-- Presenting data analysis projects
+- How to present data analysis projects
+
+{{< alert icon="️📅" >}}
+Presentations with all of WiSTEM on Friday!
+{{< /alert >}}
