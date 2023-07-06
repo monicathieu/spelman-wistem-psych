@@ -1,10 +1,10 @@
 ---
 title: 'Class notes: June 22, 2023'
 output: blogdown::html_page
-description: "Lecture notes and helpful info after class."
-excerpt: "Lecture notes and helpful info after class."
+description: "Lecture notes on developing data cleaning plans."
+excerpt: "Lecture notes  on developing data cleaning plans."
 date: 2023-06-22
-lastmod: "2023-06-23"
+lastmod: "2023-07-06"
 draft: false
 images: []
 categories: ["Class notes"]
@@ -30,11 +30,11 @@ Note that the path I am using to read in this data is the path on my local compu
 
 
 ```r
-big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-final.csv"))
+big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-random-half.csv"))
 ```
 
 ```
-## Rows: 1015341 Columns: 110
+## Rows: 203068 Columns: 110
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: "\t"
 ## chr  (107): EXT1, EXT2, EXT3, EXT4, EXT5, EXT6, EXT7, EXT8, EXT9, EXT10, EST...
@@ -56,20 +56,20 @@ big5_2018_raw
 ```
 
 ```
-## # A tibble: 1,015,341 × 110
+## # A tibble: 203,068 × 110
 ##    EXT1  EXT2  EXT3  EXT4  EXT5  EXT6  EXT7  EXT8  EXT9  EXT10 EST1  EST2  EST3 
 ##    <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr>
-##  1 4     1     5     2     5     1     5     2     4     1     1     4     4    
-##  2 3     5     3     4     3     3     2     5     1     5     2     3     4    
-##  3 2     3     4     4     3     2     1     3     2     5     4     4     4    
-##  4 2     2     2     3     4     2     2     4     1     4     3     3     3    
-##  5 3     3     3     3     5     3     3     5     3     4     1     5     5    
-##  6 3     3     4     2     4     2     2     3     3     4     3     4     3    
-##  7 4     3     4     3     3     3     5     3     4     3     2     4     4    
-##  8 3     1     5     2     5     2     5     2     3     2     2     4     2    
-##  9 2     2     3     3     4     2     2     2     4     4     3     4     4    
-## 10 1     5     3     5     2     3     2     4     5     4     3     3     3    
-## # ℹ 1,015,331 more rows
+##  1 3     4     3     3     3     2     3     3     3     3     4     4     4    
+##  2 3     2     4     2     5     1     5     3     4     3     3     3     3    
+##  3 2     2     4     2     3     2     2     3     3     5     2     3     1    
+##  4 3     1     3     1     5     1     2     4     2     4     4     3     4    
+##  5 2     2     4     4     2     1     2     2     5     2     4     2     4    
+##  6 4     2     5     3     4     2     5     3     2     3     4     4     4    
+##  7 4     3     2     5     2     2     1     5     2     4     2     5     1    
+##  8 5     2     5     1     5     1     4     2     4     2     4     2     5    
+##  9 4     3     4     2     4     2     4     2     4     3     2     5     2    
+## 10 1     3     4     4     4     2     2     4     2     4     2     3     3    
+## # ℹ 203,058 more rows
 ## # ℹ 97 more variables: EST4 <chr>, EST5 <chr>, EST6 <chr>, EST7 <chr>,
 ## #   EST8 <chr>, EST9 <chr>, EST10 <chr>, AGR1 <chr>, AGR2 <chr>, AGR3 <chr>,
 ## #   AGR4 <chr>, AGR5 <chr>, AGR6 <chr>, AGR7 <chr>, AGR8 <chr>, AGR9 <chr>,
@@ -88,15 +88,15 @@ big5_2018_raw |>
 
 ```
 ## # A tibble: 7 × 2
-##   EXT1       n
-##   <chr>  <int>
-## 1 0       3720
-## 2 1     249711
-## 3 2     199165
-## 4 3     288622
-## 5 4     191638
-## 6 5      80702
-## 7 NULL    1783
+##   EXT1      n
+##   <chr> <int>
+## 1 0       743
+## 2 1     50122
+## 3 2     39875
+## 4 3     57449
+## 5 4     38345
+## 6 5     16167
+## 7 NULL    367
 ```
 
 Aha! This "NULL" value must be the problem. If we use `filter()` to get only the data that has "NULL" in the first column, we can see it clearly represents missing data across all the columns.
@@ -108,7 +108,7 @@ big5_2018_raw |>
 ```
 
 ```
-## # A tibble: 1,783 × 110
+## # A tibble: 367 × 110
 ##    EXT1  EXT2  EXT3  EXT4  EXT5  EXT6  EXT7  EXT8  EXT9  EXT10 EST1  EST2  EST3 
 ##    <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr> <chr>
 ##  1 NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL 
@@ -121,7 +121,7 @@ big5_2018_raw |>
 ##  8 NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL 
 ##  9 NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL 
 ## 10 NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL  NULL 
-## # ℹ 1,773 more rows
+## # ℹ 357 more rows
 ## # ℹ 97 more variables: EST4 <chr>, EST5 <chr>, EST6 <chr>, EST7 <chr>,
 ## #   EST8 <chr>, EST9 <chr>, EST10 <chr>, AGR1 <chr>, AGR2 <chr>, AGR3 <chr>,
 ## #   AGR4 <chr>, AGR5 <chr>, AGR6 <chr>, AGR7 <chr>, AGR8 <chr>, AGR9 <chr>,
@@ -134,12 +134,12 @@ Let's fix this by adding an argument to `read_tsv()`. The `na` argument allows u
 
 
 ```r
-big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-final.csv"),
+big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-random-half.csv"),
                           na = "NULL")
 ```
 
 ```
-## Rows: 1015341 Columns: 110
+## Rows: 203068 Columns: 110
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: "\t"
 ## chr    (3): country, lat_appx_lots_of_err, long_appx_lots_of_err
@@ -185,20 +185,20 @@ big5_2018 |>
 ```
 
 ```
-## # A tibble: 3,720 × 50
+## # A tibble: 743 × 50
 ##     EXT1  EXT2  EXT3  EXT4  EXT5  EXT6  EXT7  EXT8  EXT9 EXT10  EST1  EST2  EST3
 ##    <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-##  1     0     3     2     4     3     2     2     4     2     4     4     4     5
-##  2     0     2     5     2     4     3     2     5     1     4     4     2     4
-##  3     0     0     0     0     0     0     0     0     0     0     0     0     0
-##  4     0     2     5     3     4     2     4     3     5     5     3     4     5
-##  5     0     2     5     2     2     2     4     2     4     5     1     4     3
-##  6     0     0     0     0     0     0     0     0     0     0     0     0     0
-##  7     0     1     5     1     5     3     0     0     0     0     1     5     5
-##  8     0     1     5     1     5     1     5     1     3     3     0     1     4
-##  9     0     2     2     2     2     2     2     2     2     2     2     2     2
+##  1     0     0     0     0     0     0     0     0     0     0     0     0     0
+##  2     0     0     0     0     0     0     0     0     0     0     0     0     0
+##  3     0     2     4     5     4     2     3     1     5     2     3     5     4
+##  4     0     0     0     0     2     0     0     0     0     0     0     0     0
+##  5     0     3     5     1     0     5     5     1     3     2     5     3     5
+##  6     0     3     3     3     3     2     2     4     2     4     2     3     4
+##  7     0     2     3     4     3     2     2     4     4     4     2     4     4
+##  8     0     0     0     0     0     0     0     0     0     0     0     0     0
+##  9     0     0     0     0     0     0     0     0     0     0     0     0     0
 ## 10     0     0     0     0     0     0     0     0     0     0     0     0     0
-## # ℹ 3,710 more rows
+## # ℹ 733 more rows
 ## # ℹ 37 more variables: EST4 <dbl>, EST5 <dbl>, EST6 <dbl>, EST7 <dbl>,
 ## #   EST8 <dbl>, EST9 <dbl>, EST10 <dbl>, AGR1 <dbl>, AGR2 <dbl>, AGR3 <dbl>,
 ## #   AGR4 <dbl>, AGR5 <dbl>, AGR6 <dbl>, AGR7 <dbl>, AGR8 <dbl>, AGR9 <dbl>,
@@ -236,20 +236,20 @@ big5_missing_counts
 ```
 
 ```
-## # A tibble: 1,013,558 × 1
+## # A tibble: 202,701 × 1
 ##    n_responded
 ##          <dbl>
 ##  1          50
-##  2          50
+##  2          49
 ##  3          50
-##  4          50
+##  4          49
 ##  5          50
 ##  6          50
 ##  7          50
 ##  8          50
-##  9          49
+##  9          50
 ## 10          50
-## # ℹ 1,013,548 more rows
+## # ℹ 202,691 more rows
 ```
 
 This concludes what we got to at the end of class. Everything below is how I would actually finish the data cleaning, but we didn't get to it as a group. I'm including it here so you can follow my train of thought all the way to the final clean data.
@@ -279,20 +279,20 @@ big5_2018
 ```
 
 ```
-## # A tibble: 1,013,558 × 51
+## # A tibble: 202,701 × 51
 ##    n_responded  EXT1  EXT2  EXT3  EXT4  EXT5  EXT6  EXT7  EXT8  EXT9 EXT10  EST1
 ##          <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-##  1          50     4     1     5     2     5     1     5     2     4     1     1
-##  2          50     3     5     3     4     3     3     2     5     1     5     2
-##  3          50     2     3     4     4     3     2     1     3     2     5     4
-##  4          50     2     2     2     3     4     2     2     4     1     4     3
-##  5          50     3     3     3     3     5     3     3     5     3     4     1
-##  6          50     3     3     4     2     4     2     2     3     3     4     3
-##  7          50     4     3     4     3     3     3     5     3     4     3     2
-##  8          50     3     1     5     2     5     2     5     2     3     2     2
-##  9          49     2     2     3     3     4     2     2     2     4     4     3
-## 10          50     1     5     3     5     2     3     2     4     5     4     3
-## # ℹ 1,013,548 more rows
+##  1          50     3     4     3     3     3     2     3     3     3     3     4
+##  2          49     3     2     4     2     5     1     5     3     4     3     3
+##  3          50     2     2     4     2     3     2     2     3     3     5     2
+##  4          49     3     1     3     1     5     1     2     4     2     4     4
+##  5          50     2     2     4     4     2     1     2     2     5     2     4
+##  6          50     4     2     5     3     4     2     5     3     2     3     4
+##  7          50     4     3     2     5     2     2     1     5     2     4     2
+##  8          50     5     2     5     1     5     1     4     2     4     2     4
+##  9          50     4     3     4     2     4     2     4     2     4     3     2
+## 10          50     1     3     4     4     4     2     2     4     2     4     2
+## # ℹ 202,691 more rows
 ## # ℹ 39 more variables: EST2 <dbl>, EST3 <dbl>, EST4 <dbl>, EST5 <dbl>,
 ## #   EST6 <dbl>, EST7 <dbl>, EST8 <dbl>, EST9 <dbl>, EST10 <dbl>, AGR1 <dbl>,
 ## #   AGR2 <dbl>, AGR3 <dbl>, AGR4 <dbl>, AGR5 <dbl>, AGR6 <dbl>, AGR7 <dbl>,
@@ -317,20 +317,20 @@ big5_2018
 ```
 
 ```
-## # A tibble: 874,434 × 51
+## # A tibble: 174,974 × 51
 ##    n_responded  EXT1  EXT2  EXT3  EXT4  EXT5  EXT6  EXT7  EXT8  EXT9 EXT10  EST1
 ##          <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-##  1          50     4     1     5     2     5     1     5     2     4     1     1
-##  2          50     3     5     3     4     3     3     2     5     1     5     2
-##  3          50     2     3     4     4     3     2     1     3     2     5     4
-##  4          50     2     2     2     3     4     2     2     4     1     4     3
-##  5          50     3     3     3     3     5     3     3     5     3     4     1
-##  6          50     3     3     4     2     4     2     2     3     3     4     3
-##  7          50     4     3     4     3     3     3     5     3     4     3     2
-##  8          50     3     1     5     2     5     2     5     2     3     2     2
-##  9          50     1     5     3     5     2     3     2     4     5     4     3
-## 10          50     3     3     2     3     3     2     4     3     3     5     4
-## # ℹ 874,424 more rows
+##  1          50     3     4     3     3     3     2     3     3     3     3     4
+##  2          50     2     2     4     2     3     2     2     3     3     5     2
+##  3          50     2     2     4     4     2     1     2     2     5     2     4
+##  4          50     4     2     5     3     4     2     5     3     2     3     4
+##  5          50     4     3     2     5     2     2     1     5     2     4     2
+##  6          50     5     2     5     1     5     1     4     2     4     2     4
+##  7          50     4     3     4     2     4     2     4     2     4     3     2
+##  8          50     1     3     4     4     4     2     2     4     2     4     2
+##  9          50     3     3     4     5     4     5     3     5     1     5     2
+## 10          50     3     3     4     4     4     4     2     4     3     4     3
+## # ℹ 174,964 more rows
 ## # ℹ 39 more variables: EST2 <dbl>, EST3 <dbl>, EST4 <dbl>, EST5 <dbl>,
 ## #   EST6 <dbl>, EST7 <dbl>, EST8 <dbl>, EST9 <dbl>, EST10 <dbl>, AGR1 <dbl>,
 ## #   AGR2 <dbl>, AGR3 <dbl>, AGR4 <dbl>, AGR5 <dbl>, AGR6 <dbl>, AGR7 <dbl>,
@@ -339,7 +339,7 @@ big5_2018
 ## #   CSN10 <dbl>, OPN1 <dbl>, OPN2 <dbl>, OPN3 <dbl>, OPN4 <dbl>, OPN5 <dbl>, …
 ```
 
-That gives us 874434 rows remaining, when we started with 1015341 rows. I think we'll be okay with the remaining data.
+That gives us 174974 rows remaining, when we started with 203068 rows. I think we'll be okay with the remaining data.
 
 ### Calculating sum scores for each of the 5 personality factors
 
@@ -364,20 +364,20 @@ big5_2018
 ```
 
 ```
-## # A tibble: 874,434 × 5
+## # A tibble: 174,974 × 5
 ##    CSN_sum AGR_sum EST_sum OPN_sum EXT_sum
 ##      <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-##  1      32      31      24      33      30
-##  2      31      32      21      27      34
-##  3      28      28      26      31      29
-##  4      27      32      27      31      26
-##  5      32      30      23      36      35
-##  6      29      28      22      32      30
-##  7      29      33      30      37      35
-##  8      33      32      20      31      30
-##  9      29      33      31      27      34
-## 10      32      29      35      38      31
-## # ℹ 874,424 more rows
+##  1      31      31      31      34      30
+##  2      30      32      27      32      28
+##  3      36      33      34      40      26
+##  4      28      34      26      25      33
+##  5      42      26      34      34      30
+##  6      35      27      32      35      31
+##  7      32      31      25      36      32
+##  8      29      29      28      30      30
+##  9      25      24      28      31      38
+## 10      25      29      25      35      35
+## # ℹ 174,964 more rows
 ```
 
 Now this dataframe is actually ready for analysis. 🎉

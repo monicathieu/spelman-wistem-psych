@@ -1,8 +1,8 @@
 ---
 title: 'Class notes: June 22, 2023'
 output: blogdown::html_page
-description: "Lecture notes and helpful info after class."
-excerpt: "Lecture notes and helpful info after class."
+description: "Lecture notes on developing data cleaning plans."
+excerpt: "Lecture notes  on developing data cleaning plans."
 date: 2023-06-22
 lastmod: "`r Sys.Date()`"
 draft: false
@@ -33,7 +33,7 @@ This dataset file also has its values separated with tabs, so we can use `read_t
 Note that the path I am using to read in this data is the path on my local computer, and it won't work for you if you directly copy and paste! You will need to change this to the path to where the data are saved on _your_ RStudio Cloud project, relative to _your_ RStudio Cloud home folder.
 
 ```{r}
-big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-final.csv"))
+big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-random-half.csv"))
 ```
 The next sections will cover our **data cleaning to-do list**, and one example solution to each point on the to-do list.
 
@@ -62,7 +62,7 @@ big5_2018_raw |>
 Let's fix this by adding an argument to `read_tsv()`. The `na` argument allows us to specify any values that we _know_ represent missing data, so that R will read them in as `NA` and not as text.
 
 ```{r}
-big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-final.csv"),
+big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-random-half.csv"),
                           na = "NULL")
 ```
 
