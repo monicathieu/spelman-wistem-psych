@@ -414,4 +414,87 @@ You only need to do `fct_recode(as.character(YOUR_CATEGORICAL_COLUMN))` if you'r
 
 ## Reshaping data with `pivot_longer()`
 
-Under construction!
+(To learn more about the technique presented in this section, refer to [section 6.3 of the textbook.](https://r4ds.hadley.nz/data-tidy.html#sec-pivoting))
+
+If you are dealing with data collected at multiple points in time, you may sometimes read in data where each data column contains data from the _same variable,_ but measured at _different points in time._
+
+For example, in these data we see that the maternal mortality rate has been measured in a number of countries every 5 years from 2000 to 2020. Each year's column contains data from the _same variable._
+
+
+```r
+# Need readxl to read in excel files
+library(readxl)
+
+excel_data <- read_excel(here::here("ignore",
+                                    "data",
+                                    "MMR-maternal-deaths-and-LTR_MMEIG-trends_2000-2020_released-Feb_2023.xlsx"),
+                         sheet = 2,
+                         range = "A5:H190")
+```
+
+
+```r
+excel_data
+```
+
+```
+## # A tibble: 185 × 8
+##    `UNICEF Region` `ISO Code` Country         `2000` `2005` `2010` `2015` `2020`
+##    <chr>           <chr>      <chr>            <dbl>  <dbl>  <dbl>  <dbl>  <dbl>
+##  1 ROSA            AFG        Afghanistan       1346   1103    899    776    620
+##  2 ECARO           ALB        Albania             14     11      9      7      8
+##  3 MENA            DZA        Algeria            159    144    112     89     78
+##  4 ESARO           AGO        Angola             860    550    367    274    222
+##  5 LACRO           ATG        Antigua and Ba…     51     34     31     27     21
+##  6 LACRO           ARG        Argentina           72     63     55     39     45
+##  7 ECARO           ARM        Armenia             50     38     33     25     27
+##  8 Industrialized  AUS        Australia            7      5      5      5      3
+##  9 Industrialized  AUT        Austria              6      6      6      6      5
+## 10 ECARO           AZE        Azerbaijan          56     44     33     29     41
+## # ℹ 175 more rows
+```
+
+To work with these data in R, we want to _reshape_ them so that there is _only one column containing the maternal mortality rate data._ Right now, each row contains all the observations for a particular country, but we need to make the data _longer in rows and narrower in columns_ (or, more hot-dog shaped if you like) so that each row contains the observations for a particular country _in a particular year._ This will let us analyze data _either_ by country _or_ by year (or both).
+
+To reshape the data and make it longer, we will use the function `pivot_longer()`.
+
+Once you pipe your data into `pivot_longer()`, you _always_ need to set the following three arguments:
+
+1. `cols`: Which columns contain the repeated-measure data that you need to hot-dog-ify? Here, because all the year columns are adjacent to one another, we can use the colon `:` to go _from_ the 2000 column `through` the 2020 column. (You can select columns using any valid syntax you might use to choose columns inside `select()`.) Notice that the year column names are quoted with backtick quotes, otherwise R would treat them as numbers and not column names.
+1. `names_to`: What do you want the new name of the column containing the old column names to be? In quotes.
+1. `values_to`: What do you want the new name of the column containing the actual observations to be? In quotes.
+
+Here, I've also set the `names_transform` argument so that the new `Year` column will get turned into numbers, because that column would be text by default. R expects column names to be text, so the `names_to` column comes out as text by default unless you tell R otherwise.
+
+
+```r
+excel_data_long <- excel_data |> 
+  pivot_longer(cols = `2000`:`2020`,
+               names_to = "Year",
+               values_to = "MMR",
+               names_transform = list(Year = as.numeric))
+```
+
+And now the data have one long column for maternal mortality rate, with identifying columns _both_ for country _and_ for year the data were collected!
+
+
+```r
+excel_data_long
+```
+
+```
+## # A tibble: 925 × 5
+##    `UNICEF Region` `ISO Code` Country      Year   MMR
+##    <chr>           <chr>      <chr>       <dbl> <dbl>
+##  1 ROSA            AFG        Afghanistan  2000  1346
+##  2 ROSA            AFG        Afghanistan  2005  1103
+##  3 ROSA            AFG        Afghanistan  2010   899
+##  4 ROSA            AFG        Afghanistan  2015   776
+##  5 ROSA            AFG        Afghanistan  2020   620
+##  6 ECARO           ALB        Albania      2000    14
+##  7 ECARO           ALB        Albania      2005    11
+##  8 ECARO           ALB        Albania      2010     9
+##  9 ECARO           ALB        Albania      2015     7
+## 10 ECARO           ALB        Albania      2020     8
+## # ℹ 915 more rows
+```
