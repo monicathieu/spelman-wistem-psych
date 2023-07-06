@@ -238,7 +238,169 @@ Again, if R detects even _one_ text-like value in a column of a dataset file, it
 
 ### The numbers are spelled in an unexpected way
 
-Under construction!
+By default, R expects numbers in data files to be formatted according to American English defaults. So, for example, if you read in a column of numbers where each number value contains _only_ digits, R unambiguously knows how to read these in.
+
+
+```r
+# Don't worry about the syntax in these first two lines
+# I am using these as an example to show you
+# how read_csv() will interpret numbers spelled this way in your data file
+c("value", "1000", "2000", "3000") |> 
+  I() |> 
+  # I am piping the data into read_csv()
+  # so I don't have to manually specify the first argument
+  read_csv()
+```
+
+```
+## Rows: 3 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## dbl (1): value
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 3 × 1
+##   value
+##   <dbl>
+## 1  1000
+## 2  2000
+## 3  3000
+```
+
+Specific to American English, R also knows that the comma is often used to break up every third place value of digits, so data containing numbers with commas will still get read in as numeric data.
+
+
+```r
+c("value", "1,000", "2,000", "3,000") |> 
+  I() |> 
+  read_csv()
+```
+
+```
+## Warning: One or more parsing issues, call `problems()` on your data frame for details,
+## e.g.:
+##   dat <- vroom(...)
+##   problems(dat)
+```
+
+```
+## Rows: 3 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## num (1): value
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 3 × 1
+##   value
+##   <dbl>
+## 1  1000
+## 2  2000
+## 3  3000
+```
+R also knows that the decimal is specified with a point in American English, so numbers with periods get read in as decimal values.
+
+
+```r
+c("value", "1.01", "2.01", "3.01") |> 
+  I() |> 
+  read_csv()
+```
+
+```
+## Rows: 3 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## dbl (1): value
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 3 × 1
+##   value
+##   <dbl>
+## 1  1.01
+## 2  2.01
+## 3  3.01
+```
+However, sometimes you might need to read in data with different thousands-grouping or decimal markers. For example, in Europe, they have the decimal and the grouping markers switched. One thousand is spelled like 1.000, and one-point-five is spelled like 1,5 (if you have seen a gas station outside the US, this might be familiar to you). Or, for example, you might have data where the grouping marker for the thousands is a space instead of a comma OR a period. The space is considered an ["international" thousands-grouping marker,](https://www.bipm.org/en/committees/cg/cgpm/22-2003/resolution-10) because it can't be confused for the other two.
+
+These number-spelling differences are considered part of the **locale** of your data, because they are regional. R's default locale is the US, so we normally don't notice anything odd when we use R, but you can always manually specify a locale setting when you read in data spelled according to the conventions of a different locale. Use the `locale` argument of `read_csv()` (or `read_excel()`, or any functions in the family) to manually specify what the decimal mark is and what the thousands-grouping mark is.
+
+For example, these should get read in as the numbers 1, 2, and 3 if we tell R that the decimal is a comma and the thousands-grouping is a period. (If you need to tell R _either_ that the decimal is a comma _or_ that the thousands-grouping is a period, I recommend setting both at the same time so R doesn't get confused with the American English defaults.)
+
+
+```r
+c("value", "1,000", "2,000", "3,000") |> 
+  I() |> 
+  read_csv(locale = locale(decimal_mark = ",",
+                           grouping_mark = "."))
+```
+
+```
+## Warning: One or more parsing issues, call `problems()` on your data frame for details,
+## e.g.:
+##   dat <- vroom(...)
+##   problems(dat)
+```
+
+```
+## Rows: 3 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## dbl (1): value
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 3 × 1
+##   value
+##   <dbl>
+## 1     1
+## 2     2
+## 3     3
+```
+
+And these should get read in as regular thousands if we tell R that the thousands-grouping mark is a space, per international weights and measures standards. (We only need to specify the thousands-grouping mark because it should not affect the existing default decimal mark this time.)
+
+
+```r
+c("value", "1 000", "2 000", "3 000") |> 
+  I() |> 
+  read_csv(locale = locale(grouping_mark = " "))
+```
+
+```
+## Rows: 3 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## num (1): value
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 3 × 1
+##   value
+##   <dbl>
+## 1  1000
+## 2  2000
+## 3  3000
+```
+
+You can use the `locale` argument along with all the other typical arguments you might set in your file-reading function.
 
 ## Recoding categorical variables with `mutate()` and `fct_recode()`
 
