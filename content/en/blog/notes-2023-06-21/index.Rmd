@@ -1,8 +1,8 @@
 ---
 title: 'Class notes: June 21, 2023'
 output: blogdown::html_page
-description: "Lecture notes and helpful info after class."
-excerpt: "Lecture notes and helpful info after class."
+description: "Lecture notes on basic graphs with ggplot2."
+excerpt: "Lecture notes on basic graphs with ggplot2."
 date: 2023-06-21
 lastmod: "`r Sys.Date()`"
 draft: false

@@ -1,10 +1,10 @@
 ---
 title: "Class notes: June 15, 2023"
 output: blogdown::html_page
-description: "Lecture notes and helpful info after class."
-excerpt: "Lecture notes and helpful info after class."
+description: "Lecture notes on (some of) the core data manipulation functions."
+excerpt: "Lecture notes on (some of) the core data manipulation functions."
 date: 2023-06-15
-lastmod: "2023-06-16"
+lastmod: "2023-07-06"
 draft: false
 images: []
 categories: ["Class notes"]
