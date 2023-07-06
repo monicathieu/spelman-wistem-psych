@@ -1,0 +1,255 @@
+---
+title: "Project notes: Cleaning data"
+output: blogdown::html_page
+description: "Lecture notes for cleaning project data."
+excerpt: "Lecture notes for cleaning project data."
+date: 2023-07-06
+lastmod: "2023-07-06"
+draft: false
+images: []
+categories: ["Class notes"]
+tags: []
+contributors: ["Monica Thieu"]
+pinned: false
+homepage: false
+---
+
+Again, now that we're fully in the project work stage of the course, the lecture notes after class will focus mainly on demonstrating and explaining specific techniques that people need for their particular project data.
+
+
+```r
+library(tidyverse)
+```
+
+```
+## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.2     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.0
+## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.1     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+```
+
+First, I'll read in some student data that will pop up in later examples.
+
+
+```r
+csv_data <- read_csv(here::here("ignore",
+                                "data",
+                                "AI_index_db.csv"))
+```
+
+```
+## Rows: 62 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (5): Country, Region, Cluster, Income group, Political regime
+## dbl (8): Talent, Infrastructure, Operating Environment, Research, Developmen...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+## Renaming columns
+
+Often times, when you read in other people's data, they may have nice-looking column names that _are not legal variable names,_ usually because the column names have spaces in them.
+
+
+```r
+csv_data
+```
+
+```
+## # A tibble: 62 × 13
+##    Country     Talent Infrastructure Operating Environmen…¹ Research Development
+##    <chr>        <dbl>          <dbl>                  <dbl>    <dbl>       <dbl>
+##  1 United Sta…  100             94.0                   64.6    100         100  
+##  2 China         16.5          100                     91.6     71.4        80.0
+##  3 United Kin…   39.6           71.4                   74.6     36.5        25.0
+##  4 Canada        31.3           77.0                   93.9     30.7        25.8
+##  5 Israel        35.8           67.6                   82.4     32.6        28.0
+##  6 Singapore     39.4           84.3                   43.2     37.7        22.6
+##  7 South Korea   14.5           85.2                   68.9     26.7        77.2
+##  8 The Nether…   33.8           82.0                   88.0     25.5        30.2
+##  9 Germany       27.6           77.2                   70.2     35.8        24.8
+## 10 France        28.3           77.2                   80.0     25.5        21.4
+## # ℹ 52 more rows
+## # ℹ abbreviated name: ¹​`Operating Environment`
+## # ℹ 7 more variables: `Government Strategy` <dbl>, Commercial <dbl>,
+## #   `Total score` <dbl>, Region <chr>, Cluster <chr>, `Income group` <chr>,
+## #   `Political regime` <chr>
+```
+
+See how some of the column names have spaces in them?
+
+You don't _HAVE_ to rename these columns, because you can still call them using the backtick character ` as special quotation marks around the column name. Quoting out a column name with backticks in R code tells R that that column name does indeed represent ONE column name/variable, even if normally a space would mean you're ending one command name and starting another.
+
+This can be annoying, though, so if you want to rename column names to remove spaces, here's a smooth way to do it:
+
+
+```r
+csv_data <- csv_data |> 
+  rename_with(.fn = \(x) str_replace_all(x, " ", "_"),
+              .cols = everything())
+```
+
+You may recognize some of these code bits from other techniques like using `across()` inside `mutate()` to manipulate multiple columns at once. `rename_with()` is like `across()` but for renaming many columns at once, using a string function on the column names.
+
+The `.fn` argument takes the function you want to pass over each column name. In this example, I'm using `str_replace_all()` to replace every space character in a column name with an underscore, to make it a legal variable name. You could even remove spaces by using `str_remove_all()` instead, but sometimes this makes column names harder to read. We always feed this function into the `.fn` argument starting with `\(x)`, which is necessary to tell R "pass this string function across every column name, one at a time".
+
+Then, the `.cols` argument tells R which column names we want to rename. In this case, our function should only affect the names of columns that have spaces in them (otherwise, nothing gets replaced), so we can call the function on every single column using `everything()`. That way, the columns that need to get fixed get fixed, and the columns that don't need to get fixed stay the same.
+
+Now, all column names are legal variable names, and we don't have to use the backtick quotes anymore.
+
+
+```r
+csv_data
+```
+
+```
+## # A tibble: 62 × 13
+##    Country      Talent Infrastructure Operating_Environment Research Development
+##    <chr>         <dbl>          <dbl>                 <dbl>    <dbl>       <dbl>
+##  1 United Stat…  100             94.0                  64.6    100         100  
+##  2 China          16.5          100                    91.6     71.4        80.0
+##  3 United King…   39.6           71.4                  74.6     36.5        25.0
+##  4 Canada         31.3           77.0                  93.9     30.7        25.8
+##  5 Israel         35.8           67.6                  82.4     32.6        28.0
+##  6 Singapore      39.4           84.3                  43.2     37.7        22.6
+##  7 South Korea    14.5           85.2                  68.9     26.7        77.2
+##  8 The Netherl…   33.8           82.0                  88.0     25.5        30.2
+##  9 Germany        27.6           77.2                  70.2     35.8        24.8
+## 10 France         28.3           77.2                  80.0     25.5        21.4
+## # ℹ 52 more rows
+## # ℹ 7 more variables: Government_Strategy <dbl>, Commercial <dbl>,
+## #   Total_score <dbl>, Region <chr>, Cluster <chr>, Income_group <chr>,
+## #   Political_regime <chr>
+```
+
+
+## Dropping columns with `select()`
+
+Refer to the [previous class notes on select()](../class-notes-june-15-2023/#select-choose-a-subset-of-columns) to see a variety of ways you can use `select()` to choose just some columns of your data.
+
+Another way you can use `select()` that I didn't show in the earlier class is to _drop just some unwanted columns, keeping all the rest._
+
+You can use the minus `-` in front of the column name to designate columns to _drop._ All columns not mentioned will remain in the data.
+
+For example:
+
+
+```r
+csv_data <- csv_data |> 
+  select(-Cluster, -Political_regime)
+```
+
+Those columns should now be gone:
+
+
+```r
+csv_data
+```
+
+```
+## # A tibble: 62 × 11
+##    Country      Talent Infrastructure Operating_Environment Research Development
+##    <chr>         <dbl>          <dbl>                 <dbl>    <dbl>       <dbl>
+##  1 United Stat…  100             94.0                  64.6    100         100  
+##  2 China          16.5          100                    91.6     71.4        80.0
+##  3 United King…   39.6           71.4                  74.6     36.5        25.0
+##  4 Canada         31.3           77.0                  93.9     30.7        25.8
+##  5 Israel         35.8           67.6                  82.4     32.6        28.0
+##  6 Singapore      39.4           84.3                  43.2     37.7        22.6
+##  7 South Korea    14.5           85.2                  68.9     26.7        77.2
+##  8 The Netherl…   33.8           82.0                  88.0     25.5        30.2
+##  9 Germany        27.6           77.2                  70.2     35.8        24.8
+## 10 France         28.3           77.2                  80.0     25.5        21.4
+## # ℹ 52 more rows
+## # ℹ 5 more variables: Government_Strategy <dbl>, Commercial <dbl>,
+## #   Total_score <dbl>, Region <chr>, Income_group <chr>
+```
+
+## Dropping rows with `filter()`
+
+Refer to the [previous class notes on `filter()`](../class-notes-june-15-2023/#filter-choose-a-subset-of-rows) to see different logical & relational statements you can use to choose only the rows in your data you want to keep.
+
+In particular, you might want to use `%in%` to keep only the rows of your data where the values in a particular column are in a list of interest. For example:
+
+
+```r
+csv_data
+```
+
+```
+## # A tibble: 62 × 11
+##    Country      Talent Infrastructure Operating_Environment Research Development
+##    <chr>         <dbl>          <dbl>                 <dbl>    <dbl>       <dbl>
+##  1 United Stat…  100             94.0                  64.6    100         100  
+##  2 China          16.5          100                    91.6     71.4        80.0
+##  3 United King…   39.6           71.4                  74.6     36.5        25.0
+##  4 Canada         31.3           77.0                  93.9     30.7        25.8
+##  5 Israel         35.8           67.6                  82.4     32.6        28.0
+##  6 Singapore      39.4           84.3                  43.2     37.7        22.6
+##  7 South Korea    14.5           85.2                  68.9     26.7        77.2
+##  8 The Netherl…   33.8           82.0                  88.0     25.5        30.2
+##  9 Germany        27.6           77.2                  70.2     35.8        24.8
+## 10 France         28.3           77.2                  80.0     25.5        21.4
+## # ℹ 52 more rows
+## # ℹ 5 more variables: Government_Strategy <dbl>, Commercial <dbl>,
+## #   Total_score <dbl>, Region <chr>, Income_group <chr>
+```
+
+Right now, we see this data has row for 62 countries. Maybe you don't care about all those countries. In that case, you can use %in%, with a vector of countries you want to keep, specified with `c("Country 1", "Country 2", etc)`. Remember to spell the country names (or whatever other level names you want to keep) exactly how they're spelled in the data! 
+
+
+```r
+csv_data_filtered <- csv_data |> 
+  filter(Country %in% c("United States of America", "Canada", "Mexico"))
+
+csv_data_filtered
+```
+
+```
+## # A tibble: 3 × 11
+##   Country       Talent Infrastructure Operating_Environment Research Development
+##   <chr>          <dbl>          <dbl>                 <dbl>    <dbl>       <dbl>
+## 1 United State… 100              94.0                  64.6   100         100   
+## 2 Canada         31.3            77.0                  93.9    30.7        25.8 
+## 3 Mexico          1.72           41.8                  97.0     8.11        4.46
+## # ℹ 5 more variables: Government_Strategy <dbl>, Commercial <dbl>,
+## #   Total_score <dbl>, Region <chr>, Income_group <chr>
+```
+
+## Fixing number columns encoded as character for some reason
+
+This is one of the more common reasons you might need to clean data. R is normally pretty good at recognizing columns of numbers and storing them as numeric data. However, here are a few instances in which you might need to repair data when a number column is being stored as character.
+
+### The missing value placeholder is being read in as text
+
+R is totally fine with having `NA` values in otherwise numeric columns, but if R reads those missing values in from your dataset file as _text,_ the entire column will be read in as text to be safe. Check out the [project notes on reading in data](../project-notes-reading-in-data/#other-arguments-you-may-need) to see how to use the `na` argument in your file-reading function to render those placeholder values as `NA` and allow the rest of the column to read in as numeric.
+
+### The column names are getting read in as observations
+
+Again, if R detects even _one_ text-like value in a column of a dataset file, it will read the entire column in as text data to be safe. This means that sometimes columns will read in as text when _the column name is not read in as the column name, but instead as the first row of data._ This might happen if you have extra rows of non-data text on the top of your CSV or other plain-text data file. Refer to the [project notes on reading in data](../project-notes-reading-in-data/#other-arguments-you-may-need) to see how to use the `skip` argument in your file-reading function to skip those rows and read in the column names as the top row of the file, no matter where it might actually be.
+
+### The numbers are spelled in an unexpected way
+
+Under construction!
+
+## Recoding categorical variables with `mutate()` and `fct_recode()`
+
+Check out [the previous class notes](../class-notes-june-12-2023/#recoding-categorical-columns) for the detailed description of using `fct_recode()` inside `mutate()` to recode categorical variables.
+
+A few reminders:
+
+The levels always go `"new_level" = "old_level"`. In general, programming syntax order reads right to left, so it's old on the right turning into new on the left!
+
+You only need to do `fct_recode(as.character(YOUR_CATEGORICAL_COLUMN))` if you're starting with a _numeric_ column where _the numbers represent categorical levels._ If your starting column is ALREADY categorical text, you do not need to coerce it to character again.
+
+## Reshaping data with `pivot_longer()`
+
+Under construction!
