@@ -110,16 +110,27 @@ blogdown::shortcode_html(.name = "alert",
 
 **Graphing and visual communication**
 
+```{r}
+blogdown::shortcode_html(.name = "alert",
+                         icon = "️💡",
+                         .content = "We will have some additional lecture time this week to cover graphing and presentation styling techniques.")
+```
+
 ### Monday
 
 - Graphs as data analysis tools
 - Exploratory data analysis
 
-### Thursday
+### Wednesday
 
 - Graphs as communication devices
 - Graph customization
 - Visual communication best practices
+
+### Thursday
+
+- Slide aesthetics
+- Clarity and style in presentation design
 
 ## Week 6
 
@@ -127,11 +138,16 @@ blogdown::shortcode_html(.name = "alert",
 
 ### Monday
 
-- Formatting and publishing analysis write-ups
+- Presentation work time
+- Publishing HTML write-ups online
+
+### Wednesday
+
+- How to present data analysis projects
 
 ### Thursday
 
-- How to present data analysis projects
+- Practice presentations
 
 ```{r}
 blogdown::shortcode_html(.name = "alert",

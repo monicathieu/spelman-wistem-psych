@@ -100,16 +100,25 @@ We will have a slightly altered schedule this week (Dr. Thieu is at a conference
 
 **Graphing and visual communication**
 
+{{< alert icon="️💡" >}}
+We will have some additional lecture time this week to cover graphing and presentation styling techniques.
+{{< /alert >}}
+
 ### Monday
 
 - Graphs as data analysis tools
 - Exploratory data analysis
 
-### Thursday
+### Wednesday
 
 - Graphs as communication devices
 - Graph customization
 - Visual communication best practices
+
+### Thursday
+
+- Slide aesthetics
+- Clarity and style in presentation design
 
 ## Week 6
 
@@ -117,11 +126,16 @@ We will have a slightly altered schedule this week (Dr. Thieu is at a conference
 
 ### Monday
 
-- Formatting and publishing analysis write-ups
+- Presentation work time
+- Publishing HTML write-ups online
+
+### Wednesday
+
+- How to present data analysis projects
 
 ### Thursday
 
-- How to present data analysis projects
+- Practice presentations
 
 {{< alert icon="️📅" >}}
 Presentations with all of WiSTEM on Friday!
