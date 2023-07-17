@@ -25,6 +25,8 @@ The slides are hosted [here](https://monicathieu.quarto.pub/guide-to-presenting-
 If the slides do show up below, but if you want to see the slides in full-screen, you can right-click and choose “Open frame in new tab”, or whatever option seems like it will do that.
 
 <iframe width="720" height="480" src="https://monicathieu.quarto.pub/guide-to-presenting-graphs/" title="Monica's guide to presenting graphs"></iframe>
+<iframe width="720" height="480" src="https://monicathieu.quarto.pub/guide-to-presenting-graphs/" title="Monica&#39;s slides on presenting graphs">
+</iframe>
 
 There are a few different languages in play here, which is why sometimes the syntax for setting different presentation aesthetics seems inconsistent:
 
