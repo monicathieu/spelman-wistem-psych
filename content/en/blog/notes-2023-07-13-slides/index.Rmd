@@ -28,8 +28,6 @@ If the slides do show up below, but if you want to see the slides in full-screen
 <iframe width="720" height="480" src="https://monicathieu.quarto.pub/guide-to-presenting-graphs/" title="Monica's guide to presenting graphs"></iframe>
 ```
 
-<iframe width="720" height="480" src="https://monicathieu.quarto.pub/guide-to-presenting-graphs/" title="Monica's slides on presenting graphs"></iframe>
-
 There are a few different languages in play here, which is why sometimes the syntax for setting different presentation aesthetics seems inconsistent:
 
 - **R:** The language in your code chunks, that's actually doing the data reading/cleaning/analysis/graphing. Anytime you're setting `ggplot2` aesthetics on your _plots,_ that's R code.
