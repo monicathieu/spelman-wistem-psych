@@ -18,7 +18,11 @@ homepage: false
 
 The slides below are designed to _demonstrate_ how to make presentation-quality graphs and slides in R, while also _explaining_ technique (how?) and rationale (why?) behind graph and slide design.
 
-If you want to see the slides in full-screen, you can right-click and choose "Open frame in new tab", or whatever option seems like it will do that.
+The slides are _supposed_ to appear in the web page below, but I'm currently having some issues getting the slides preview not to get blocked by browsers! 
+
+The slides are hosted [here](https://monicathieu.quarto.pub/guide-to-presenting-graphs/) if they're not showing up below.
+
+If the slides do show up below, but if you want to see the slides in full-screen, you can right-click and choose "Open frame in new tab", or whatever option seems like it will do that.
 
 ```{=html}
 <iframe width="720" height="480" src="https://monicathieu.quarto.pub/guide-to-presenting-graphs/" title="Monica's guide to presenting graphs"></iframe>
