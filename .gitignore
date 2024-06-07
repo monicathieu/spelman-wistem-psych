@@ -3,6 +3,9 @@ public
 resources
 .netlify
 .hugo_build.lock
+yarn-error.log
+.eslintcache
+.stylelintcache
 .Rproj.user
 .Rhistory
 .DS_Store
