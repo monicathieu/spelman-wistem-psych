@@ -4,11 +4,11 @@ output: blogdown::html_page
 description: "Lecture notes on developing data cleaning plans."
 excerpt: "Lecture notes  on developing data cleaning plans."
 date: 2023-06-22
-lastmod: "2023-07-06"
+lastmod: "2024-06-07"
 draft: false
 images: []
 categories: ["Class notes"]
-tags: []
+tags: ["2023"]
 contributors: ["Monica Thieu"]
 pinned: false
 homepage: false
@@ -29,7 +29,7 @@ This dataset file also has its values separated with tabs, so we can use `read_t
 Note that the path I am using to read in this data is the path on my local computer, and it won't work for you if you directly copy and paste! You will need to change this to the path to where the data are saved on _your_ RStudio Cloud project, relative to _your_ RStudio Cloud home folder.
 
 
-```r
+``` r
 big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-random-half.csv"))
 ```
 
@@ -51,7 +51,7 @@ The next sections will cover our **data cleaning to-do list**, and one example s
 When we first attempt to read in the data using all the default settings of `read_tsv()`, almost all of the columns are getting read in as character (or text) data. That's weird! The personality columns should all be numbers...
 
 
-```r
+``` r
 big5_2018_raw
 ```
 
@@ -81,7 +81,7 @@ big5_2018_raw
 We can use `count()` to check what levels are in one of the personality question columns that's supposed to be numeric, to check for any sneaky text values in there that are causing the whole column to read in as text.
 
 
-```r
+``` r
 big5_2018_raw |> 
   count(EXT1)
 ```
@@ -102,7 +102,7 @@ big5_2018_raw |>
 Aha! This "NULL" value must be the problem. If we use `filter()` to get only the data that has "NULL" in the first column, we can see it clearly represents missing data across all the columns.
 
 
-```r
+``` r
 big5_2018_raw |> 
   filter(EXT1 == "NULL")
 ```
@@ -133,7 +133,7 @@ big5_2018_raw |>
 Let's fix this by adding an argument to `read_tsv()`. The `na` argument allows us to specify any values that we _know_ represent missing data, so that R will read them in as `NA` and not as text.
 
 
-```r
+``` r
 big5_2018_raw <- read_tsv(here::here("ignore", "data", "IPIP-FFM-data-8Nov2018", "data-random-half.csv"),
                           na = "NULL")
 ```
@@ -155,7 +155,7 @@ Let's also use `filter()` to remove the rows of every participant who has `NA` i
 The logical statement `!is.na(EXT1)` allows us to keep only the rows where the EXT1 column is _not_ missing (the not comes from the !).
 
 
-```r
+``` r
 big5_2018 <- big5_2018_raw |> 
   filter(!is.na(EXT1))
 ```
@@ -167,7 +167,7 @@ By reading the codebook, we can see that the only data columns are the personali
 I can select from `EXT1:OPN10` because I know all those columns are adjacent to one another.
 
 
-```r
+``` r
 big5_2018 <- big5_2018 |> 
   select(EXT1:OPN10)
 ```
@@ -179,7 +179,7 @@ The codebook file tells us that responses on each personality question go from 1
 If we look at some rows where participants have a response of 0 for `EXT1`, we can see that it looks like 0 _also_ represents **missing** data. However, some of these people do have responses for some questions and not others, not like "NULL" when every single response was missing.
 
 
-```r
+``` r
 big5_2018 |> 
   filter(EXT1 == 0)
 ```
@@ -214,7 +214,7 @@ We can apply some of the techniques we used before, with some new functions as w
 We will do this by creating a _new_ dataframe JUST to hold the question count column.
 
 
-```r
+``` r
 big5_missing_counts <- big5_2018 |> 
   # First, use across() in mutate() to turn each personality col to binary
   # Use 1 if they DID respond, and 0 if they did NOT
@@ -231,7 +231,7 @@ big5_missing_counts <- big5_2018 |>
 ```
 
 
-```r
+``` r
 big5_missing_counts
 ```
 
@@ -267,14 +267,14 @@ We can stick these dataframes together using `bind_cols()`, which will combine t
 After that, I'm piping into `select()` so I can move our new column all the way to the left. That way, it'll pop up when we print out the dataframe so I can see what's in that column.
 
 
-```r
+``` r
 # I'm overwriting the previous big5_2018 with the bind_cols version
 big5_2018 <- bind_cols(big5_2018, big5_missing_counts) |> 
   select(n_responded, everything())
 ```
 
 
-```r
+``` r
 big5_2018
 ```
 
@@ -306,13 +306,13 @@ big5_2018
 Now, we can use `filter()` to filter out participants whose numbers are too low. Let's see what happens when we keep only people who responded to all 50 questions.
 
 
-```r
+``` r
 big5_2018 <- big5_2018 |> 
   filter(n_responded == 50)
 ```
 
 
-```r
+``` r
 big5_2018
 ```
 
@@ -346,7 +346,7 @@ That gives us 174974 rows remaining, when we started with 203068 rows. I think w
 This we already know how to do, from the previous dataset!
 
 
-```r
+``` r
 big5_2018 <- big5_2018 |> 
   rowwise() |> 
   mutate(CSN_sum = sum(c_across(CSN1:CSN10)),
@@ -359,7 +359,7 @@ big5_2018 <- big5_2018 |>
 ```
 
 
-```r
+``` r
 big5_2018
 ```
 

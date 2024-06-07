@@ -4,11 +4,11 @@ output: blogdown::html_page
 description: "Lecture notes for reading project data into R."
 excerpt: "Lecture notes for reading project data into R."
 date: 2023-07-03
-lastmod: "2023-07-06"
+lastmod: "2024-06-07"
 draft: false
 images: []
 categories: ["Class notes"]
-tags: []
+tags: ["2023"]
 contributors: ["Monica Thieu"]
 pinned: false
 homepage: false
@@ -19,24 +19,24 @@ Now that we're fully in the project work stage of the course, the lecture notes 
 ## Reading in data
 
 
-```r
+``` r
 library(tidyverse)
 ```
 
 ```
 ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.2     ✔ readr     2.1.4
-## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-## ✔ purrr     1.0.1     
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
-```r
+``` r
 library(readxl)
 ```
 
@@ -52,7 +52,7 @@ The vast majority of the time, a file that ends in .csv is delimited with commas
 If it is delimited with commas, you can use `read_csv()` to read in your data, and it _should_ just work with the file path as the only argument:
 
 
-```r
+``` r
 csv_data <- read_csv(here::here("ignore",
                                 "data",
                                 "AI_index_db.csv"))
@@ -74,7 +74,7 @@ csv_data <- read_csv(here::here("ignore",
 Now we see that the data are read in as a dataframe we can interact with in R! Woohoo.
 
 
-```r
+``` r
 csv_data
 ```
 
@@ -145,7 +145,7 @@ Thankfully, the `read_excel()` function from the `readxl` package will take care
 You will need to visually inspect the data in Excel before reading it into R in order to figure out which sheet and range to read from. After that, though, you shouldn't need to interact with the data in Excel anymore.
 
 
-```r
+``` r
 excel_data <- read_excel(here::here("ignore",
                                     "data",
                                     "MMR-maternal-deaths-and-LTR_MMEIG-trends_2000-2020_released-Feb_2023.xlsx"),
@@ -156,7 +156,7 @@ excel_data <- read_excel(here::here("ignore",
 (This also works--notice that the `sheet` argument is now set to the name of the sheet in the workbook in quotes:)
 
 
-```r
+``` r
 excel_data_from_sheet_name <- read_excel(here::here("ignore",
                                     "data",
                                     "MMR-maternal-deaths-and-LTR_MMEIG-trends_2000-2020_released-Feb_2023.xlsx"),
@@ -167,7 +167,7 @@ excel_data_from_sheet_name <- read_excel(here::here("ignore",
 And we can confirm just to be sure that the data read in these two ways are exactly the same.
 
 
-```r
+``` r
 # the compare() function from the waldo package is a nice way to check for object equality in R
 waldo::compare(excel_data, excel_data_from_sheet_name)
 ```
@@ -179,7 +179,7 @@ waldo::compare(excel_data, excel_data_from_sheet_name)
 When we print the dataframe contents out, we can see that it looks like a normal R dataframe. Yay!
 
 
-```r
+``` r
 excel_data
 ```
 

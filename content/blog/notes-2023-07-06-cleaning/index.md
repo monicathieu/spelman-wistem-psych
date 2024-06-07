@@ -4,11 +4,11 @@ output: blogdown::html_page
 description: "Lecture notes for cleaning project data."
 excerpt: "Lecture notes for cleaning project data."
 date: 2023-07-06
-lastmod: "2023-07-06"
+lastmod: "2024-06-07"
 draft: false
 images: []
 categories: ["Class notes"]
-tags: []
+tags: ["2023"]
 contributors: ["Monica Thieu"]
 pinned: false
 homepage: false
@@ -23,11 +23,11 @@ library(tidyverse)
 
 ```
 ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.2     ✔ readr     2.1.4
-## ✔ forcats   1.0.0     ✔ stringr   1.5.0
-## ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-## ✔ purrr     1.0.1     
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
@@ -59,7 +59,7 @@ csv_data <- read_csv(here::here("ignore",
 Often times, when you read in other people's data, they may have nice-looking column names that _are not legal variable names,_ usually because the column names have spaces in them.
 
 
-```r
+``` r
 csv_data
 ```
 
@@ -91,7 +91,7 @@ You don't _HAVE_ to rename these columns, because you can still call them using 
 This can be annoying, though, so if you want to rename column names to remove spaces, here's a smooth way to do it:
 
 
-```r
+``` r
 csv_data <- csv_data |> 
   rename_with(.fn = \(x) str_replace_all(x, " ", "_"),
               .cols = everything())
@@ -106,7 +106,7 @@ Then, the `.cols` argument tells R which column names we want to rename. In this
 Now, all column names are legal variable names, and we don't have to use the backtick quotes anymore.
 
 
-```r
+``` r
 csv_data
 ```
 
@@ -142,7 +142,7 @@ You can use the minus `-` in front of the column name to designate columns to _d
 For example:
 
 
-```r
+``` r
 csv_data <- csv_data |> 
   select(-Cluster, -Political_regime)
 ```
@@ -150,7 +150,7 @@ csv_data <- csv_data |>
 Those columns should now be gone:
 
 
-```r
+``` r
 csv_data
 ```
 
@@ -180,7 +180,7 @@ Refer to the [previous class notes on `filter()`](../class-notes-june-15-2023/#f
 In particular, you might want to use `%in%` to keep only the rows of your data where the values in a particular column are in a list of interest. For example:
 
 
-```r
+``` r
 csv_data
 ```
 
@@ -206,7 +206,7 @@ csv_data
 Right now, we see this data has row for 62 countries. Maybe you don't care about all those countries. In that case, you can use %in%, with a vector of countries you want to keep, specified with `c("Country 1", "Country 2", etc)`. Remember to spell the country names (or whatever other level names you want to keep) exactly how they're spelled in the data! 
 
 
-```r
+``` r
 csv_data_filtered <- csv_data |> 
   filter(Country %in% c("United States of America", "Canada", "Mexico"))
 
@@ -241,7 +241,7 @@ Again, if R detects even _one_ text-like value in a column of a dataset file, it
 By default, R expects numbers in data files to be formatted according to American English defaults. So, for example, if you read in a column of numbers where each number value contains _only_ digits, R unambiguously knows how to read these in.
 
 
-```r
+``` r
 # Don't worry about the syntax in these first two lines
 # I am using these as an example to show you
 # how read_csv() will interpret numbers spelled this way in your data file
@@ -274,7 +274,7 @@ c("value", "1000", "2000", "3000") |>
 Specific to American English, R also knows that the comma is often used to break up every third place value of digits, so data containing numbers with commas will still get read in as numeric data.
 
 
-```r
+``` r
 c("value", "1,000", "2,000", "3,000") |> 
   I() |> 
   read_csv()
@@ -308,7 +308,7 @@ c("value", "1,000", "2,000", "3,000") |>
 R also knows that the decimal is specified with a point in American English, so numbers with periods get read in as decimal values.
 
 
-```r
+``` r
 c("value", "1.01", "2.01", "3.01") |> 
   I() |> 
   read_csv()
@@ -339,7 +339,7 @@ These number-spelling differences are considered part of the **locale** of your 
 For example, these should get read in as the numbers 1, 2, and 3 if we tell R that the decimal is a comma and the thousands-grouping is a period. (If you need to tell R _either_ that the decimal is a comma _or_ that the thousands-grouping is a period, I recommend setting both at the same time so R doesn't get confused with the American English defaults.)
 
 
-```r
+``` r
 c("value", "1,000", "2,000", "3,000") |> 
   I() |> 
   read_csv(locale = locale(decimal_mark = ",",
@@ -375,7 +375,7 @@ c("value", "1,000", "2,000", "3,000") |>
 And these should get read in as regular thousands if we tell R that the thousands-grouping mark is a space, per international weights and measures standards. (We only need to specify the thousands-grouping mark because it should not affect the existing default decimal mark this time.)
 
 
-```r
+``` r
 c("value", "1 000", "2 000", "3 000") |> 
   I() |> 
   read_csv(locale = locale(grouping_mark = " "))
@@ -421,7 +421,7 @@ If you are dealing with data collected at multiple points in time, you may somet
 For example, in these data we see that the maternal mortality rate has been measured in a number of countries every 5 years from 2000 to 2020. Each year's column contains data from the _same variable._
 
 
-```r
+``` r
 # Need readxl to read in excel files
 library(readxl)
 
@@ -433,7 +433,7 @@ excel_data <- read_excel(here::here("ignore",
 ```
 
 
-```r
+``` r
 excel_data
 ```
 
@@ -467,7 +467,7 @@ Once you pipe your data into `pivot_longer()`, you _always_ need to set the foll
 Here, I've also set the `names_transform` argument so that the new `Year` column will get turned into numbers, because that column would be text by default. R expects column names to be text, so the `names_to` column comes out as text by default unless you tell R otherwise.
 
 
-```r
+``` r
 excel_data_long <- excel_data |> 
   pivot_longer(cols = `2000`:`2020`,
                names_to = "Year",
@@ -478,7 +478,7 @@ excel_data_long <- excel_data |>
 And now the data have one long column for maternal mortality rate, with identifying columns _both_ for country _and_ for year the data were collected!
 
 
-```r
+``` r
 excel_data_long
 ```
 

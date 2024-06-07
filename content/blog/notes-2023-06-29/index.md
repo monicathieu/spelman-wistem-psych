@@ -4,11 +4,11 @@ output: blogdown::html_page
 description: "Lecture notes on _finding and evaluating datasets._"
 excerpt: "Lecture notes _finding and evaluating datasets._"
 date: 2023-06-29
-lastmod: "2023-07-06"
+lastmod: "2024-06-07"
 draft: false
 images: []
 categories: ["Class notes"]
-tags: []
+tags: ["2023"]
 contributors: ["Monica Thieu"]
 pinned: false
 homepage: false

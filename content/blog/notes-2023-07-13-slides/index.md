@@ -4,11 +4,11 @@ output: blogdown::html_page
 description: "Lecture notes for making graph presentations in R."
 excerpt: "Lecture notes for making graph presentations in R."
 date: 2023-07-13
-lastmod: "2023-07-17"
+lastmod: "2024-06-07"
 draft: false
 images: []
 categories: ["Class notes"]
-tags: []
+tags: ["2023"]
 contributors: ["Monica Thieu"]
 pinned: false
 homepage: false
