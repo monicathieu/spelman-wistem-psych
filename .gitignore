@@ -9,3 +9,4 @@ resources
 ignore
 
 /.quarto/
+*-backup/

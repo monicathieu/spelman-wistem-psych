@@ -1,0 +1,156 @@
+---
+title: "Overview"
+output: blogdown::html_page
+menu:
+  docs:
+    parent: "schedule"
+weight: 200
+toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+We will always meet at 2:30-4:30 pm. The weekly schedule will _generally_ be:
+
+- Monday: Class
+- Tuesday: _No meeting_
+- Wednesday: Office hours and co-working
+- Thursday: Class
+
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "note",
+                         .content = "The schedule is subject to change, but whatever you see here is current.")
+```
+
+## Week 1
+
+### Monday
+
+**Introduction to scientific computing**
+
+- Why scientists program
+- The anatomy of code and code editors
+- How and why psychologists use computational tools
+
+### Thursday
+
+**Data wrangling: The core toolkit**
+
+- Data types
+- Logical and relational operators
+- Tidy dataframe manipulation
+- Troubleshooting as an experimentation skill
+
+## Week 2
+
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "note",
+                         .content = "We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We will not have class this Monday (Juneteenth).")
+```
+
+### _Tuesday_
+
+**Data wrangling: The core toolkit (continued)**
+
+- Tidy dataframe manipulation
+
+### Wednesday
+
+- Exploring data visually
+- Dealing with irregular data
+- Developing strategies for cleaning data
+
+### Thursday
+
+**Code style and hygiene**
+
+- R scripts and R Markdown
+- Scripting hygiene
+
+## Week 3
+
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "note",
+                         .content = "We will have a slightly altered schedule this week (Dr. Thieu is at a conference).")
+```
+
+### _Tuesday_
+
+- One-on-one check-in meetings (Zoom)
+
+### Thursday
+
+**Working with scientists' data**
+
+- How to search for literature and datasets
+- Inspecting and evaluating datasets
+- Basic descriptive statistics
+
+## Week 4
+
+**Data cleaning: the real stuff**
+
+### Monday
+
+- Reading in data
+- Cleaning column formats
+- Handling missing data
+
+### Thursday
+
+- Reshaping data
+- Joining data
+
+## Week 5
+
+**Graphing and visual communication**
+
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "note",
+                         .content = "We will have some additional lecture time this week to cover graphing and presentation styling techniques.")
+```
+
+### Monday
+
+- Graphs as data analysis tools
+- Exploratory data analysis
+
+### Wednesday
+
+- Graphs as communication devices
+- Graph customization
+- Visual communication best practices
+
+### Thursday
+
+- Slide aesthetics
+- Clarity and style in presentation design
+
+## Week 6
+
+**Presenting and sharing code and results**
+
+### Monday
+
+- Presentation work time
+- Publishing HTML write-ups online
+
+### Wednesday
+
+- How to present data analysis projects
+
+### Thursday
+
+- Practice presentations
+
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "note",
+                         .content = "Presentations with all of WiSTEM on Friday!")
+```
