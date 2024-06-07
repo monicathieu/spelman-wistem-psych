@@ -8,10 +8,10 @@
   name = "Schedule"
   weight = 20
   identifier = "schedule"
-  url = "/docs/schedule/schedule/"
+  url = "/docs/schedule/overview/"
   
 [[main]]
-  name = "Blog"
+  name = "Lecture notes"
   url = "/blog/"
   weight = 30
 
