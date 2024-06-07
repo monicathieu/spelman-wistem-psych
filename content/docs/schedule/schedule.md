@@ -59,7 +59,7 @@ We will have class on Monday and Thursday this week (instead of Wednesday, for J
 We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).
 {{< /callout >}}
 
-### Thursday
+### *Thursday*
 
 **Data cleaning (continued)**
 

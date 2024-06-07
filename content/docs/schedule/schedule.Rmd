@@ -69,7 +69,7 @@ blogdown::shortcode_html(.name = "callout",
                          .content = "We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).")
 ```
 
-### Thursday
+### _Thursday_
 
 **Data cleaning (continued)**
 
