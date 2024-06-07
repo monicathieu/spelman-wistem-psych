@@ -22,7 +22,7 @@ blogdown::shortcode_html(.name = "callout",
 
 ## Week 1
 
-### Monday
+### Monday June 10
 
 **Data science & scientific computing: what, why, and how?**
 
@@ -30,7 +30,7 @@ blogdown::shortcode_html(.name = "callout",
 - Why scientists program
 - How to craft a data science research question
 
-### Wednesday
+### Wednesday June 13
 
 **Sourcing useful data**
 
@@ -49,13 +49,13 @@ blogdown::shortcode_html(.name = "callout",
 
 **Data cleaning**
 
-### Monday
+### Monday June 17
 
 - Tidy dataframe manipulation
 - Data types
 - Cleaning column formats
 
-### _Thursday_
+### _Thursday June 20_
 
 - Reshaping data
 - Joining data
@@ -69,7 +69,7 @@ blogdown::shortcode_html(.name = "callout",
                          .content = "We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).")
 ```
 
-### _Thursday_
+### _Thursday June 27_
 
 **Data cleaning (continued)**
 
@@ -77,13 +77,13 @@ blogdown::shortcode_html(.name = "callout",
 
 ## Week 4
 
-### Monday
+### Monday July 1
 
 **Exploratory data analysis**
 
 - Exploratory graphs
 
-### Wednesday
+### Wednesday July 3
 
 **Visual communication**
 
@@ -92,14 +92,14 @@ blogdown::shortcode_html(.name = "callout",
 
 ## Week 5
 
-### Monday
+### Monday July 8
 
 **Visual communication (continued)**
 
 - Graph customization
 - Critiquing graphs
 
-### Wednesday
+### Wednesday July 10
 
 **Presentation design for clear communication**
 
@@ -109,23 +109,24 @@ blogdown::shortcode_html(.name = "callout",
 
 ## Week 6
 
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "note",
+                         .content = "Different schedule this week! Dr. Thieu is traveling on Monday, and final presentations are Friday so we're meeting on Tues, Wed, and Thu.")
+```
+
 **Completing projects**
 
-### Monday
+### _Tuesday July 16_
 
 - Presentation work time
 
-### Wednesday
+### Wednesday July 17
 
 - Presentation work time
 - Publishing HTML presentations online
 
-### _Thursday_
+### _Thursday July 18_
 
 - Practice presentations
 
-```{r}
-blogdown::shortcode_html(.name = "callout",
-                         "note",
-                         .content = "Presentations with all of WiSTEM on Friday!")
-```

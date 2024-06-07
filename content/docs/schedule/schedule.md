@@ -16,7 +16,7 @@ The schedule is subject to change, but whatever you see here is current.
 
 ## Week 1
 
-### Monday
+### Monday June 10
 
 **Data science & scientific computing: what, why, and how?**
 
@@ -24,7 +24,7 @@ The schedule is subject to change, but whatever you see here is current.
 - Why scientists program
 - How to craft a data science research question
 
-### Wednesday
+### Wednesday June 13
 
 **Sourcing useful data**
 
@@ -41,13 +41,13 @@ We will have class on Monday and Thursday this week (instead of Wednesday, for J
 
 **Data cleaning**
 
-### Monday
+### Monday June 17
 
 - Tidy dataframe manipulation
 - Data types
 - Cleaning column formats
 
-### *Thursday*
+### *Thursday June 20*
 
 - Reshaping data
 - Joining data
@@ -59,7 +59,7 @@ We will have class on Monday and Thursday this week (instead of Wednesday, for J
 We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).
 {{< /callout >}}
 
-### *Thursday*
+### *Thursday June 27*
 
 **Data cleaning (continued)**
 
@@ -67,13 +67,13 @@ We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).
 
 ## Week 4
 
-### Monday
+### Monday July 1
 
 **Exploratory data analysis**
 
 - Exploratory graphs
 
-### Wednesday
+### Wednesday July 3
 
 **Visual communication**
 
@@ -82,14 +82,14 @@ We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).
 
 ## Week 5
 
-### Monday
+### Monday July 8
 
 **Visual communication (continued)**
 
 - Graph customization
 - Critiquing graphs
 
-### Wednesday
+### Wednesday July 10
 
 **Presentation design for clear communication**
 
@@ -99,21 +99,21 @@ We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).
 
 ## Week 6
 
+{{< callout "note" >}}
+Different schedule this week! Dr. Thieu is traveling on Monday, and final presentations are Friday so we're meeting on Tues, Wed, and Thu.
+{{< /callout >}}
+
 **Completing projects**
 
-### Monday
+### *Tuesday July 16*
 
 - Presentation work time
 
-### Wednesday
+### Wednesday July 17
 
 - Presentation work time
 - Publishing HTML presentations online
 
-### *Thursday*
+### *Thursday July 18*
 
 - Practice presentations
-
-{{< callout "note" >}}
-Presentations with all of WiSTEM on Friday!
-{{< /callout >}}
