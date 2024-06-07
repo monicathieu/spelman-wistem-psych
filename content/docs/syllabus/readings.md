@@ -26,6 +26,10 @@ blogdown::shortcode_html(.name = "callout",
 As we go through the class, this section will be updated with links to useful readings and resources.
 {{< /callout >}}
 
+### Other textbooks
+
+- [Learning Data Science, 1st edition](https://learningds.org/intro.html), by Lau, Gonzalez, & Nolan (2023): More technical than R for Data Science, and mainly uses Python for the examples
+
 ### Package documentation & use guides
 
 - [Tidyverse online package documentation](https://www.tidyverse.org/packages/): much more detailed and comprehensive

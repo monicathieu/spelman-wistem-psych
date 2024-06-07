@@ -8,12 +8,7 @@ weight: 200
 toc: true
 ---
 
-We will always meet at 2:30-4:30 pm. The weekly schedule will *generally* be:
-
-- Monday: Class
-- Tuesday: *No meeting*
-- Wednesday: Office hours and co-working
-- Thursday: Class
+We will *generally* meet on **Mondays and Wednesdays 2:30-4:30 pm.** We may adjust meeting days some weeks depending on holidays, and to get some extra work time before final presentations.
 
 {{< callout "note" >}}
 The schedule is subject to change, but whatever you see here is current.
@@ -23,117 +18,99 @@ The schedule is subject to change, but whatever you see here is current.
 
 ### Monday
 
-**Introduction to scientific computing**
+**Data science & scientific computing: what, why, and how?**
 
+- What is data science?
 - Why scientists program
+- How to craft a data science research question
+
+### Wednesday
+
+**Sourcing useful data**
+
+- Searching for datasets
+- Evaluating the potential of a dataset
 - The anatomy of code and code editors
-- How and why psychologists use computational tools
-
-### Thursday
-
-**Data wrangling: The core toolkit**
-
-- Data types
-- Logical and relational operators
-- Tidy dataframe manipulation
-- Troubleshooting as an experimentation skill
+- Reading in data
 
 ## Week 2
 
 {{< callout "note" >}}
-We will have a full class on _Tuesday,_ _Wednesday,_ and Thursday this week. We will not have class this Monday (Juneteenth).
+We will have class on Monday and Thursday this week (instead of Wednesday, for Juneteenth).
 {{< /callout >}}
 
-### *Tuesday*
+**Data cleaning**
 
-**Data wrangling: The core toolkit (continued)**
+### Monday
 
 - Tidy dataframe manipulation
+- Data types
+- Cleaning column formats
 
-### Wednesday
+### *Thursday*
 
-- Exploring data visually
-- Dealing with irregular data
-- Developing strategies for cleaning data
-
-### Thursday
-
-**Code style and hygiene**
-
-- R scripts and R Markdown
-- Scripting hygiene
+- Reshaping data
+- Joining data
+- Handling missing data
 
 ## Week 3
 
 {{< callout "note" >}}
-We will have a slightly altered schedule this week (Dr. Thieu is at a conference).
+We will meet once on Thursday this week (Dr. Thieu is at a conference Mon-Wed).
 {{< /callout >}}
-
-### *Tuesday*
-
-- One-on-one check-in meetings (Zoom)
 
 ### Thursday
 
-**Working with scientists’ data**
+**Data cleaning (continued)**
 
-- How to search for literature and datasets
-- Inspecting and evaluating datasets
-- Basic descriptive statistics
+- Additional data cleaning techniques
 
 ## Week 4
 
-**Data cleaning: the real stuff**
-
 ### Monday
 
-- Reading in data
-- Cleaning column formats
-- Handling missing data
+**Exploratory data analysis**
 
-### Thursday
-
-- Reshaping data
-- Joining data
-
-## Week 5
-
-**Graphing and visual communication**
-
-{{< callout "note" >}}
-We will have some additional lecture time this week to cover graphing and presentation styling techniques.
-{{< /callout >}}
-
-### Monday
-
-- Graphs as data analysis tools
-- Exploratory data analysis
+- Exploratory graphs
 
 ### Wednesday
 
+**Visual communication**
+
 - Graphs as communication devices
-- Graph customization
 - Visual communication best practices
 
-### Thursday
+## Week 5
 
+### Monday
+
+**Visual communication (continued)**
+
+- Graph customization
+- Critiquing graphs
+
+### Wednesday
+
+**Presentation design for clear communication**
+
+- How to present data analysis projects
 - Slide aesthetics
 - Clarity and style in presentation design
 
 ## Week 6
 
-**Presenting and sharing code and results**
+**Completing projects**
 
 ### Monday
 
 - Presentation work time
-- Publishing HTML write-ups online
 
 ### Wednesday
 
-- How to present data analysis projects
+- Presentation work time
+- Publishing HTML presentations online
 
-### Thursday
+### *Thursday*
 
 - Practice presentations
 

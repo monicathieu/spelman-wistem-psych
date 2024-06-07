@@ -12,23 +12,25 @@ toc: true
 
 ## Course description
 
-Our thoughts, feelings, and behaviors are multifaceted and highly personal, but can still be broken down into organizing dimensions that help scientists to structure and make sense of underlying psychological constructs. We can use statistical and graphing tools to break down large datasets of human ratings & responses and discover what psychological dimensions lie underneath them.
+**Data science** is the practice of extracting insights from large amounts of quantitative data. Rigorous data science requires two things:
 
-In this project course, students will analyze open repositories of psychological stimuli and observer ratings to learn about and replicate canonical results of psychological science. Specifically, students will practice decomposing large numbers of psychological variables into latent dimensions like valence and arousal (underlying emotion) or warmth and competence (underlying social trait inference).
+- the _technical skill_ to make sense of patterns in data
+- the _logical skill_ to understand those patterns in the context of the world that generated those data
 
-This course aims to introduce students to _**scientific** computing_ through the lens of _psychology research,_ and _inspire excitement about the uses and joys of programming for scientists._
+This course aims to introduce students to _**scientific** computing,_ which encompasses both of those technical and logical skills. In general, this aims to _inspire excitement and curiosity about the uses, pitfalls, and joys of programming for scientists._
 
 ## Learning objectives
 
-By the end of this course, students will be able to…
+By the end of this project course, students will be able to…
 
-- Read in, clean, and inspect a dataset
-- Investigate and describe the scientific concepts necessary to make sense of the dataset
-- Generate code to manipulate a dataset or produce a data visualization
-- Interpret and critique a data visualization
+- Design a research question of personal interest that can be answered with publicly available data
+- Source a dataset that can answer said research question
+- Explain the contents of the dataset and evaluate potential error and bias in the data
+- Inspect the data, clean the data, and prepare it for analysis
+- Visually analyze the data by generating exploratory graphs
+- Generate presentation graphs to communicate meaningful patterns in the data
 - Identify and debug commonplace R errors
-
-There are _many_ different ways to analyze data, depending on the data and the research question. This course will focus on common exploratory statistical techniques, particularly _dimension reduction_ and _clustering techniques for multivariate data._
+- Design clear, engaging, and informative presentations of results
 
 ## Course format
 

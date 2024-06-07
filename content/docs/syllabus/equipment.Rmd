@@ -12,7 +12,7 @@ toc: true
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This is a programming class, so you will need a computer to use during class and to complete problem sets and exams.
+This is a programming class, so you will need a computer to work on your class project.
 
 We will be using [RStudio Cloud](https://rstudio.cloud/learn/guide), a web app, to write code and manage data in the class. RStudio Cloud runs from a cloud server and is beamed into your browser, so it should not require you to download any additional software.
 
@@ -26,7 +26,7 @@ Mac, Windows, Linux, and Chromebook laptops less than 7 years old will be the ea
 
 ### Tablets
 
-Most tablets less than 4 years old that can run the desktop version of websites should be able to run RStudio Cloud. You will need an external keyboard in order to type code on your tablet. Sometimes, tablets will have issues that laptops/desktops would not have, like problems with typing quotation marks, scrolling through code, or copying and pasting chunks of code. For this reason, if you have the option of using a laptop or a tablet, we recommend using a laptop, but a tablet & keyboard should be sufficient to complete all coursework.
+Most tablets less than 4 years old that can run the desktop version of websites should be able to run RStudio Cloud. You will need an external keyboard in order to type code on your tablet. Sometimes, tablets will have issues that laptops/desktops would not have, like problems with typing quotation marks, scrolling through code, or copying and pasting chunks of code. For this reason, if you have the option of using a laptop or a tablet, I recommend using a laptop, but a tablet & keyboard should be sufficient to complete the course project.
 
 ### University computers
 
@@ -34,18 +34,18 @@ If you do not have access to a compatible laptop or tablet:
 
 #### During class
 
-During class, you can sit at one of the classroom's desktop computer workstations and use that computer to follow along during class.
+During class, you can use one of the shared laptops from the cart to follow along during class.
 
 #### Outside class (Problem sets and exams)
 
-If you live on or near Spelman's campus, you can use one of the computers in the [Science Center](https://www.spelman.edu/academics/library) or the [Cosby Academic Center](https://www.spelman.edu/academics/ssp/academic-support-services/comprehensive-writing-program/resources-for-students/computer-labs) to complete assignments outside of class during computer lab hours.
+You can use one of the computers in the [Science Center](https://www.spelman.edu/academics/library) or the [Cosby Academic Center](https://www.spelman.edu/academics/ssp/academic-support-services/comprehensive-writing-program/resources-for-students/computer-labs) to work on your project outside of class during computer lab hours.
 
 ## Respectful computer use during class
 
-I expect you to make the best use of class time, so I trust that you will use your device primarily for taking notes and keeping up with code exercises. This is a psychology class, so we all know that it's not really possible to divide your attention between class activities and personal activities during class 😛 Further, please respect your peers' attention and be mindful of how the contents of your personal screen might distract those around you.
+I expect you to make the best use of class time, so I trust that you will use your device primarily for taking notes and keeping up with code exercises. You know that it's not really possible to divide your attention between class activities and personal activities during class 😛 Further, please respect your peers' attention and be mindful of how the contents of your personal screen might distract those around you.
 
 (My expectations for your participation during class are described in more detail on the [**Participation & communication**](../participation-communication) page!)
 
 ## Home internet
 
-RStudio Cloud requires internet access to be able to connect to the cloud server where your code and data are stored. If at any time you will not have reliable enough internet access to complete assignments outside of class, and you will not be able to come to campus to use a library computer, please contact me so we can set up a method for you to keep up with problem sets without internet.
+RStudio Cloud requires internet access to be able to connect to the cloud server where your code and data are stored. If at any time you will not have reliable enough internet access to work on your project outside of class, and you will not be able to use a shared or library computer, please contact me so we can set up a method for you to keep up with the course without internet.

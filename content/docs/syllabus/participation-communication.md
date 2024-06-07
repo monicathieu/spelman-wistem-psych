@@ -17,10 +17,10 @@ This course will be quite hands-on (hands on keyboard specifically!). I know fro
 Participation may involve, but is not limited to:
 
 - Coding along with me
-- Answering poll questions to check your understanding and brainstorm new ideas
+- Answering check-in questions to check your understanding and brainstorm new ideas
 - Group work to peer-review code and solve exercises
 
-You are much more likely to succeed in independently applying concepts and skills on problem sets and your final project if you take advantage of participation opportunities during class. While participation will not be formally graded, because I don’t want you to feel like you must participate for the sake of participating, I hope you will participate for your own benefit, and for the benefit of your peers!
+You are _much_ more likely to succeed in independently applying concepts and skills to your project if you take advantage of participation opportunities during class. While this course (including participation) is not be formally graded, I hope you will participate for your own benefit, and for the benefit of your peers!
 
 ## Communication with teaching team
 
@@ -32,9 +32,7 @@ When you email, please help me sort your email in my inbox by writing the subjec
 
 ### Office hours
 
-I would love to chat with you during office hours--I can of course answer questions about problem sets and course content, but we can also talk about lab research, course planning, careers, and more.
-
-I will host office hours and group working time on **Wednesdays 2:30-4:30pm,** at the same time slot and classroom that we have class on Mondays and Thursdays. Come through!
+I would love to chat with you outside of class--I can of course answer questions about course content, but we can also talk about lab research, course planning, careers, and more.
 
 If you want to talk at another time, please book an appointment using [this appointment page](https://outlook.office.com/bookwithme/user/dceecfbcd2ae4646b9a4f370645c8fdd@emory.edu?anonymous&ep=plink). You can book appointments day-of. If it's on the calendar, I'm available!
 
