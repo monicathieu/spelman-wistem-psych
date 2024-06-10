@@ -16,12 +16,6 @@ Class sessions, and the examples worked in class and on problem sets, will not s
 
 ## Additional references
 
-``` r
-blogdown::shortcode_html(.name = "callout",
-                         "note",
-                         .content = "As we go through the class, this section will be updated with links to useful readings and resources.")
-```
-
 {{< callout "note" >}}
 As we go through the class, this section will be updated with links to useful readings and resources.
 {{< /callout >}}
