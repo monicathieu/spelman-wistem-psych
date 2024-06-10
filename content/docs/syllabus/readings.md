@@ -26,7 +26,7 @@ blogdown::shortcode_html(.name = "callout",
 As we go through the class, this section will be updated with links to useful readings and resources.
 {{< /callout >}}
 
-### Other textbooks
+### Other introductory data science textbooks
 
 - [Learning Data Science, 1st edition](https://learningds.org/intro.html), by Lau, Gonzalez, & Nolan (2023): More technical than R for Data Science, and mainly uses Python for the examples
 
@@ -35,6 +35,10 @@ As we go through the class, this section will be updated with links to useful re
 - [Tidyverse online package documentation](https://www.tidyverse.org/packages/): much more detailed and comprehensive
 - [Tidyverse cheatsheets](https://rstudio.github.io/cheatsheets/): quicker one-stop-shop help, but less detailed
 - [R Graphics Cookbook](https://r-graphics.org) by Winston Chang, which uses ggplot2 (which we use)
+
+### Research guides
+
+- [Carleton College Library research guide](https://gouldguides.carleton.edu/c.php?g=146834&p=964943) on evaluating the quality of a dataset
 
 ### Theory papers
 
