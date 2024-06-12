@@ -1,5 +1,5 @@
 ---
-title: 'June 10, 2024: Finding and evaluating datasets'
+title: 'Class notes: Finding and evaluating datasets'
 output: blogdown::html_page
 description: "Lecture notes on _finding and evaluating datasets._"
 excerpt: "Lecture notes _finding and evaluating datasets._"
