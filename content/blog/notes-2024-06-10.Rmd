@@ -2,7 +2,7 @@
 title: 'Class notes: Finding and evaluating datasets'
 output: blogdown::html_page
 description: "Lecture notes on _finding and evaluating datasets._"
-excerpt: "Lecture notes _finding and evaluating datasets._"
+excerpt: "Lecture notes on _finding and evaluating datasets._"
 date: 2024-06-10
 lastmod: "`r Sys.Date()`"
 draft: false

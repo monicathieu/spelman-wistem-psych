@@ -1,0 +1,91 @@
+---
+title: 'Class notes: Inspecting and cleaning your dataset'
+output: blogdown::html_page
+description: "Lecture notes on _inspecting and cleaning your dataset._"
+excerpt: "Lecture notes on _inspecting and cleaning your dataset._"
+date: 2024-06-17
+lastmod: "`r Sys.Date()`"
+draft: false
+images: []
+categories: ["Class notes"]
+tags: ["2024"]
+contributors: ["Monica Thieu"]
+pinned: false
+homepage: false
+---
+
+In today's class, we began inspecting and making sense of our datasets, and writing data manipulation code to clean our datasets if necessary.
+
+```{r}
+blogdown::shortcode_html(.name = "callout",
+                         "warning",
+                         .content = "These notes are quick and incomplete right now!")
+```
+
+
+## What's in your rows and columns?
+
+### Rows = observations
+
+Every value in one row of your dataframe belongs to one observation. You should be able to identify the unit of observation from looking at the data--does each row correspond to one person? One country? One item?
+
+### Columns = measures/variables
+
+- Identifier columns
+  - These columns can be used to identify the unit of observation in each row. If your data has only one identifier column, it will have a unique value for each row. Your dataset may also have multiple identifier columns, that yield a unique value for each row when considered together. For example, if you have data from multiple counties in multiple states, then all the rows from counties in the same state will have the same state identifier value, but if you combine the state and the county columns together each row should now have a unique value. Identifier columns will typically be represented as **character** data, or text, unless the identifier is an ID number.
+- Data columns
+  - Continuous data: Any quantity that is measured using numbers and that can take any value within some range. (Age and income are two common continuous variables.) These will typically be represented as **double** data, or floating-point numbers with decimal points.
+  - Categorical data: Any quantity that can take one of a fixed set of values. (Eye color is one example.) These will typically be represented as **character** data, or text.
+    - Categorical variable can be ordered or unordered, depending on the nature of the quantity at hand.
+    
+You will need to visually inspect the data to make sure that all of the categorical columns are recognized as text, and that the continuous columns are recognized as numbers. (Just because you _see_ the column has numbers in it, does not mean that R is storing them as actual numeric data!)
+
+## Set the `na` argument to read in missing values correctly
+
+Unfortunately, sometimes a dataset will have _missing_ values, where it was not possible to measure or record a particular value for a particular observation. R uses the special placeholder value `NA` to represent any missing data. This value will not be included in any statistics or plotted on any graphs.
+
+Oftentimes, missing data are represented by a blank slot where the value would be, but technically any placeholder value can be used as long as the data analyst (you) and the computing software _know_ that that value represents missing data.
+
+Let's fix this by adding an argument to `read_csv()`. (The argument should work the same in any of the tidyverse data-reading functions, whether you're using `read_csv()`, `read_excel()`, or something else for some other file type.) 
+
+The `na` argument allows us to specify any values that we _know_ represent missing data, so that R will read them in as `NA` and not as text.
+
+So, for example, if you would normally do:
+
+```r
+raw_data <- read_csv("data/mydatafile.csv")
+```
+
+You can add the `na` argument after the file name, but inside the `read_csv()` parentheses, telling R that a blank value `""`, `"n/a"` in lowercase, and `"N/A"` in caps all represent missing data. You can include as many missing data placeholders as you need to.
+
+```r
+raw_data <- read_csv("data/mydatafile.csv", na = c("", "NA", "N/A"))
+```
+
+This has the side benefit of allowing R to read in continuous data columns as numbers, not text, because if R sees a column of all numbers but then an "NA" here and there, it knows that those don't mean that all the numbers actually represent text, but instead that the "NA" represents missing data.
+
+## `rename()` columns to have nice names
+
+R is a programming language, so it has certain expectations about how code will be formatted. One of these is that _spaces between words separate different code commands._ This extends to dataframes and their columns. In general, **column names are not allowed to have spaces in them!**
+
+You may be reading in data from some source (an Excel spreadsheet, probably...) that allows column names to have spaces in them for human readability. However, this makes the column names harder to deal with in R.
+
+Column names must obey variable naming rules in R. A legal column name can contain the following characters:
+
+* letters (upper or lowercase, R is case sensitive!)
+* numbers
+* period (.) and underscore (_)
+
+The first character MUST be a letter. Other allowed characters can be anywhere in the column name except for first.
+
+Beyond this, here are some recommendations I strongly urge you to follow as well when renaming columns:
+
+* Separate words in multi-word column names using one of the following conventions (but be consistent!):
+    + underscore_separated_names
+    + period.separated.names
+    + camelCaseNames
+* Name columns succinctly, but informatively. Abbreviations are okay if they are standard throughout your code. `max.val` is okay instead of `maximum.value`.
+* When in doubt, use lowercase letters.
+
+## Use `case_match()` to recode messy categorical variables
+
