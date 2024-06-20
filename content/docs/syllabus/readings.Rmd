@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Textbook
 
-The primary reference book for this course is [R for Data Science, 2nd edition](https://r4ds.hadley.nz), by Wickham, Cetinkaya-Rundel, & Grolemund (2023).
+The primary reference book for this course is [R for Data Science, 2nd edition](https://r4ds.hadley.nz), by Wickham, Cetinkaya-Rundel, & Grolemund.
 
 Class sessions, and the examples worked in class and on problem sets, will not strictly follow the textbook in chronological order. There are no "required" readings. Nonetheless, if you like using reference texts to supplement your work, the textbook is an excellent reference for reading more about how and why to use the techniques we practice in class.
 
@@ -28,7 +28,8 @@ blogdown::shortcode_html(.name = "callout",
 
 ### Other introductory data science textbooks
 
-- [Learning Data Science, 1st edition](https://learningds.org/intro.html), by Lau, Gonzalez, & Nolan (2023): More technical than R for Data Science, and mainly uses Python for the examples
+- [Learning Data Science, 1st edition](https://learningds.org/intro.html), by Lau, Gonzalez, & Nolan: More technical than R for Data Science, and mainly uses Python for the examples
+- [ggplot2: Elegant Graphics for Data Analysis, 3rd edition](https://ggplot2-book.org), by Wickham, Navarro, & Pedersen: While graphing is only a subset of data analysis techniques, this textbook is an excellent _conceptual_ overview of how to construct good data visualizations
 
 ### Package documentation & use guides
 
