@@ -1,0 +1,144 @@
+---
+title: "How to structure a (data) science presentation"
+author: "Monica Thieu"
+institute: "Spelman College WiSTEM"
+date: today
+date-format: short
+date-modified: "`R Sys.Date()`"
+format:
+  revealjs:
+    embed-resources: true
+    theme: [default]
+    slide-number: true
+    incremental: true
+    footer: "How to build a presentation - WiSTEM Computational Module"
+knitr:
+  opts_chunk: 
+    echo: false
+---
+
+## The guiding principles
+
+The two most important things to know _before_ you make your presentation are...
+
+1. **Goal:** What do you want your audience to know/do by the end of your talk?
+1. **Audience:** Who is your audience? What is the most effective way to communicate your goal to _this_ audience?
+
+. . .
+
+Design every part of your presentation to suit your goal and your audience.
+
+::: {.notes}
+Prompt students to brainstorm goal and audience for the presentation at hand
+:::
+
+## The parts of a (data) science _story_
+
+. . .
+
+Giving a presentation is _telling a story._
+
+. . .
+
+We can make our presentations more engaging by structuring them with storytelling techniques.
+
+## The parts of a (data) science _story_
+
+```{r}
+knitr::include_graphics("https://s.studiobinder.com/wp-content/uploads/2019/08/What-is-the-Three-Act-Structure-Diagram.jpg?resolution=1000,1.600000023841858")
+```
+
+
+## The parts of a (data) science _story_
+
+Now, when we map these story components back onto the more "traditional" components of a science presentation,
+
+. . .
+
+we gain a new understanding of why and how we should structure each section.
+
+- Introduction: [Intro]{.fragment .fade-in}
+- Rising action: [Methods]{.fragment .fade-in}
+- Crisis: [Results]{.fragment .fade-in}
+- Falling action: [Conclusion]{.fragment .fade-in}
+
+## Introduction section
+
+. . .
+
+The goal of this section is to establish the [conflict]{.fragment .strike} [research question.]{.fragment .fade-in}
+
+. . .
+
+The introduction section answers the questions:
+
+- What is your research question?
+- Why should the audience care?
+
+## Methods section
+
+. . .
+
+The goal of this section is to establish the [rising action]{.fragment .strike} [additional context needed to interpret the results.]{.fragment .fade-in}
+
+. . .
+
+A secondary goal of this section is to establish your credibility as the expert.
+
+. . .
+
+The methods section answers the questions:
+
+- Where do your results come from?
+- How should the audience interpret them?
+- Why should the audience believe them?
+
+## Methods section
+
+In a data science talk for a non-expert audience, the methods section answers the questions:
+
+- What are the data about?
+- Who collected the data?
+- What specific variables were measured? How?
+- What does the audience need to know about the data for the results to make sense?
+
+## Results section
+
+. . .
+
+The goal of this section is to explain the [crisis]{.fragment .strike} [takeaway of the data.]{.fragment .fade-in}
+
+. . .
+
+**The results section answers the research question.**
+
+. . .
+
+The results can often follow their own mini-story structure.
+
+## Results section
+
+{{< video https://youtu.be/r5_34YnCmMY width="100%" height="85%" >}}
+
+## Conclusion section
+
+. . .
+
+The goal of this section is to explain the [falling action]{.fragment .strike} [what the takeaway means for the audience.]{.fragment .fade-in}
+
+. . .
+
+The conclusion section answers the questions:
+
+- What should the audience think after the talk is over?
+- What should the audience do after the talk is over?
+
+## In conclusion...
+
+. . .
+
+A data science talk accomplishes a _goal_ with an _audience._
+
+. . .
+
+The most effective way to accomplish that goal with your audience is by structuring your talk using _storytelling techniques._
