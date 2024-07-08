@@ -89,23 +89,21 @@ blogdown::shortcode_html(.name = "callout",
 
 - Graphs as communication devices
 - Visual communication best practices
+- Graph customization
 
 ## Week 5
 
+**Presentation design for clear communication**
+
 ### Monday July 8
 
-**Visual communication (continued)**
-
-- Graph customization
-- Critiquing graphs
+- How to structure a data science presentation
+- How to present a graph
 
 ### Wednesday July 10
 
-**Presentation design for clear communication**
-
-- How to present data analysis projects
 - Slide aesthetics
-- Clarity and style in presentation design
+- Clarity and style in visual presentation design
 
 ## Week 6
 
