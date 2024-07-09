@@ -1,0 +1,19 @@
+---
+title: 'Lecture slides: How to build a data science presentation'
+output: blogdown::html_page
+description: "Lecture slides outlining the questions your presentation should answer."
+excerpt: "Lecture slides outlining the questions your presentation should answer."
+date: 2024-07-08
+lastmod: "`r Sys.Date()`"
+draft: false
+images: []
+categories: ["Class notes"]
+tags: ["2024"]
+contributors: ["Monica Thieu"]
+pinned: false
+homepage: false
+---
+
+```{=html}
+<iframe src="https://monicathieu.quarto.pub/presentation-structure-guide/#/title-slide" width="810" height="540"></iframe>
+```
