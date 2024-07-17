@@ -1,0 +1,31 @@
+---
+title: 'Lecture slides: How to customize graphs and slides'
+output: blogdown::html_page
+description: "Lecture slides demonstrating how to adjust graph and slide aesthetics."
+excerpt: "Lecture slides demonstrating how to adjust graph and slide aesthetics."
+date: 2024-07-17
+lastmod: "`r Sys.Date()`"
+draft: false
+images: []
+categories: ["Class notes"]
+tags: ["2024"]
+contributors: ["Monica Thieu"]
+pinned: false
+homepage: false
+---
+
+## Part 1: Guide to customizing and presenting graphs
+
+```{=html}
+<iframe src="https://monicathieu.quarto.pub/guide-to-presenting-graphs/#/title-slide" width="810" height="540"></iframe>
+```
+
+## Part 2: Guide to customizing R slides
+
+(Specifically, slides created using .qmd files with reveal.js like we are in this class.)
+
+This shows several examples of putting pictures on slides, changing background colors, etc. You can find much more detailed information about changing slide aesthetics at the [official help page](https://quarto.org/docs/presentations/revealjs/), but it does take a little bit more effort to search for the code you want.
+
+```{=html}
+<iframe src="https://monicathieu.quarto.pub/guide-to-customizing-r-slides/#/title-slide" width="810" height="540"></iframe>
+```
